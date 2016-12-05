@@ -11,7 +11,7 @@ function buildPaymentRequest() {
   }
 
   var supportedInstruments = [{
-    supportedMethods: ['https://tbwoody.github.io/woodypaytest']
+    supportedMethods: ['https://rsolomakhin.github.io/bobpay']
   }];
 
   var details = {
