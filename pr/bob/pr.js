@@ -46,6 +46,7 @@ function buildPaymentRequest() {
   return request;
 }
 
+
 var request = buildPaymentRequest();
 
 /**
