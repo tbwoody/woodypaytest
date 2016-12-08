@@ -15,11 +15,31 @@ function buildPaymentRequest() {
   }];
 
   var details = {
-    total: {label: 'Donation', amount: {currency: 'USD', value: '55.00'}},
+    total: {label: 'Donation', amount: {currency: 'USD', value: '95.00'}},
     displayItems: [
       {
         label: 'Original donation amount',
         amount: {currency: 'USD', value: '65.00'}
+      },
+      {
+        label: 'Note 7',
+        amount: {currency: 'USD', value: '10.00'}
+      },
+      {
+        label: 'Note 5',
+        amount: {currency: 'USD', value: '10.00'}
+      },
+      {
+        label: 'S7',
+        amount: {currency: 'USD', value: '10.00'}
+      },
+      {
+        label: 'S6',
+        amount: {currency: 'USD', value: '10.00'}
+      },
+      {
+        label: 'iphone 6s plus',
+        amount: {currency: 'USD', value: '0.00'}
       },
       {
         label: 'Friends and family discount',
