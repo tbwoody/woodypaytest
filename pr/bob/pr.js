@@ -10,9 +10,11 @@ function buildPaymentRequest() {
     return null;
   }
 
-  var supportedInstruments = [{
-    supportedMethods: ['https://rsolomakhin.github.io/bobpay']
-  }];
+  var supportedInstruments = [
+    {
+      supportedMethods: ['https://rsolomakhin.github.io/bobpay']
+    }
+  ];
 
   var details = {
     total: {label: 'Donation', amount: {currency: 'USD', value: '95.00'}},
