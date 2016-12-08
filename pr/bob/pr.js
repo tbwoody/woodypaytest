@@ -121,7 +121,7 @@ function buildPaymentRequest() {
     })(details));
   });
 
-  
+  /*
     // Show UI then continue with user payment info
   request.show().then(result => {
     // POST the result to the server
@@ -158,7 +158,7 @@ function buildPaymentRequest() {
     console.error('Uh oh, something bad happened: ' + err.message);
   });
 
-
+*/
   return request;
 }
 
