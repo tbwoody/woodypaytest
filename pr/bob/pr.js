@@ -79,7 +79,7 @@ function buildPaymentRequest() {
 
 var request = buildPaymentRequest();
 
-
+/*
 // When user selects a shipping address
 request.addEventListener('shippingaddresschange', e => {
   e.updateWith(((details, addr) => {
@@ -126,7 +126,7 @@ request.addEventListener('shippingoptionchange', e => {
     return Promise.resolve(details);
   })(details));
 });
-
+*/
 
 /**
  * Launches payment request for Bob Pay.
