@@ -12,7 +12,17 @@ function buildPaymentRequest() {
 
   var supportedInstruments = [
     {
-      supportedMethods: ['https://rsolomakhin.github.io/bobpay']
+      supportedMethods: ['https://rsolomakhin.github.io/bobpay'],
+      data:{
+        productId: '12345',
+        merchantRefId: '1321345154',
+        orderNumber: '1002',
+        paymentProtocol: 'PROTOCOL_3DS',
+        isRecurring: false,
+        merchantName: 'ABC Store',
+        billingAddressRequired: false,
+        allowedCardBrand:['AMEX','MASTERCARD','VISA','DISCOVER']
+      }
     }
   ];
 
@@ -50,11 +60,12 @@ function buildPaymentRequest() {
     ]
   };
 
+  
   var options = {
-    requestShipping: true,
-    requestPayerEmail: true,
-    requestPayerPhone: true,
-    requestPayerName: true
+    requestShipping: false,
+    requestPayerEmail: false,
+    requestPayerPhone: false,
+    requestPayerName: false
   };
 
   
