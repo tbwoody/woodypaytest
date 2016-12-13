@@ -10,11 +10,14 @@
 <body>
   <div id="contents">
     <h1>Bob Pay Test</h1>
-    <p>This merchant accepts Bob Pay.</p>
-    <p>Price: USD <strong>$55.00</strong></p>
+    <h2>Supported Instruments</h2>
+    <strong>Supported Methods</strong>
+    <br>
+    <strong>Merchant Data</strong>
     <br>
     
-    <h2><p>Please select currency code for this purchase.</p></h2>
+    <h2>Order Details</h2>
+    <strong>Currency Code</strong>
     <select name="CurrencyCode">
     <option value="USD">USD</option>
     <option value="INR">INR</option>
@@ -26,14 +29,21 @@
     <option value="GBP">GBP</option>
     </select>
     
-    <p>You can add as many as items you want dynamically.</p>
+    <strong>View and Add items</strong>
     Item:<br>
     <input type="text" name="itemName">
     <br>
     Price:<br>
     <input type="text" name="itemPrice">
     <button onclick="onBuyClicked()">Add Item</button>
-    <br><br><br>
+    <br><br>
+    
+    <ul style="list-style-type:none">
+    <li>iphone 6s plus      $1.23</li>
+    <li>Samsung Note 7      $2.31</li>
+    <li>Samsung Note 5      $1.11</li>
+    <li>Samsung Galaxy S8   $1.11</li>  
+    </ul> 
     
     <input type="checkbox" name="requestShipping" value="false">Request Shipping <br>
     <input type="checkbox" name="requestPayerEmail" value="false">Request Payer Email <br>
