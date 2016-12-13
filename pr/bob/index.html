@@ -12,8 +12,19 @@
     <h1>Bob Pay Test</h1>
     <h2>Supported Instruments</h2>
     <strong>Supported Methods</strong>
+    <input type="text" name="supportedMethods">
+    <button onclick="onBuyClicked()">Add</button>
     <br>
     <strong>Merchant Data</strong>
+    <input type="text" name="productId"><br>
+    <input type="text" name="merchantRefId"><br>
+    <input type="text" name="orderNumber"><br>
+    <input type="text" name="paymentProtocol"><br>
+    <input type="text" name="isRecurring"><br>
+    <input type="text" name="merchantName"><br>
+    <input type="text" name="billingAddressRequired"><br>
+    <input type="text" name="allowedCardBrand">
+    <button onclick="onBuyClicked()">Add</button>
     <br>
     
     <h2>Order Details</h2>
@@ -28,6 +39,7 @@
     <option value="CNY">CNY</option>
     <option value="GBP">GBP</option>
     </select>
+    <br>
     
     <strong>View and Add items</strong>
     Item:<br>
@@ -35,7 +47,7 @@
     <br>
     Price:<br>
     <input type="text" name="itemPrice">
-    <button onclick="onBuyClicked()">Add Item</button>
+    <button onclick="onBuyClicked()">Add</button>
     <br><br>
     
     <ul style="list-style-type:none">
@@ -45,6 +57,7 @@
     <li>Samsung Galaxy S8   $1.11</li>  
     </ul> 
     
+    <h2>Payment Options</h2>
     <input type="checkbox" name="requestShipping" value="false">Request Shipping <br>
     <input type="checkbox" name="requestPayerEmail" value="false">Request Payer Email <br>
     <input type="checkbox" name="requestPayerPhone" value="false">Request Payer Phone <br>
