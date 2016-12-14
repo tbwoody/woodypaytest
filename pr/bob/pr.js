@@ -263,3 +263,17 @@ function onAddMerchantDataClicked() {
   var billingAddressRequired = document.getElementById('billingAddressRequired').value;
   
 }
+
+function onAddItemClicked() {
+  var itemName = document.getElementById('itemName').value;
+  var itemPrice = document.getElementById('itemPrice').value;
+  
+  var ul = document.getElementById("orderItemsList");
+  var li = document.createElement("li");
+  
+  li.appendChild(document.createTextNode(itemName+itemPrice));
+  ul.appendChild(li);
+  
+  document.getElementById('itemName').value='';
+  document.getElementById('itemPrice').value='';
+}
