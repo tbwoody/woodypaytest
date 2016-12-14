@@ -238,11 +238,14 @@ function onAddMethodClicked() {
   var methodName = document.getElementById('supportedMethods').value;
   li.appendChild(document.createTextNode(methodName));
   ul.appendChild(li);
+  
+  document.getElementById('supportedMethods').value='';
 }
 
 function onClearMethodClicked() {
   
   var ulElem = document.getElementById('supportedMethodsList');
-  document.getElementById('myList').innerHTML = '';
+  ulElem.innerHTML = '';
   //ulElem.removeChild(ulElem.childNodes[i])
+  document.getElementById('supportedMethods').value='';
 }
