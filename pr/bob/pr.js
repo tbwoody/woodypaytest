@@ -209,11 +209,24 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
   }
 }
 
-function getSupportedMethod(){
-  return 'https://rsolomakhin.github.io/bobpay';
+function saveUserInputsToStorage(){
+  
+  if (typeof(Storage) !== "undefined") {
+    // Code for localStorage/sessionStorage.
+    var methodName = document.getElementById('supportedMethods').value;
+    localStorage.setItem("supportedMethods", methodName);
+  } else {
+      // Sorry! No Web Storage support..
+  }
 }
 
 function init(){
-  document.getElementById('supportedMethods').value = 'https://';
+  
+  if (typeof(Storage) !== "undefined") {
+    // Code for localStorage/sessionStorage.
+    document.getElementById('supportedMethods').value = localStorage.getItem("supportedMethods");
+} else {
+    // Sorry! No Web Storage support..
+}
 }
 window.onload = init;
