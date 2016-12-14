@@ -33,7 +33,7 @@ function buildPaymentRequest() {
 
   var supportedInstruments = [
     {
-      supportedMethods: ['https://rsolomakhin.github.io/bobpay'],
+      supportedMethods: ['https://rsolomakhin.github.io/bobpay','https://tbwoody.github.io/woodypaytest'],
       data:{
         productId: '12345',
         merchantRefId: '1321345154',
@@ -276,7 +276,7 @@ function onClearDataClicked() {
   document.getElementById('allowedCardBrand').value='';
   
   document.getElementById('isRecurring').checked=false;
-  document.getElementById('billingAddressRequired').checked=true;
+  document.getElementById('billingAddressRequired').checked=false;
 }
 
 
@@ -287,7 +287,7 @@ function onAddItemClicked() {
   var ul = document.getElementById("orderItemsList");
   var li = document.createElement("li");
   
-  li.appendChild(document.createTextNode(itemName+'   '+itemPrice));
+  li.appendChild(document.createTextNode(itemName+'&nbsp;&nbsp;&nbsp;&nbsp;'+itemPrice));
   ul.appendChild(li);
   
   document.getElementById('itemName').value='';
