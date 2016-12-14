@@ -23,21 +23,20 @@
    
     <strong>Merchant Data</strong><br>
     productId:
-    <input type="text" name="productId"><br>
+    <input type="text" name="productId" id="productId"><br>
     merchantRefId:
-    <input type="text" name="merchantRefId"><br>
+    <input type="text" name="merchantRefId" id="merchantRefId"><br>
     orderNumber:
-    <input type="text" name="orderNumber"><br>
+    <input type="text" name="orderNumber" id="orderNumber"><br>
     paymentProtocol:
-    <input type="text" name="paymentProtocol"><br>
-    isRecurring:
-    <input type="text" name="isRecurring"><br>
+    <input type="text" name="paymentProtocol" id="paymentProtocol"><br>
     merchantName:
-    <input type="text" name="merchantName"><br>
-    <input type="checkbox" name="billingAddressRequired" value="false">Billing Address Required<br>
-    allowedCardBrand:
-    <input type="text" name="allowedCardBrand">
-    <button onclick="onBuyClicked()">Add</button>
+    <input type="text" name="merchantName" id="merchantName"><br>
+    cardBrand:
+    <input type="text" name="allowedCardBrand" id="allowedCardBrand">
+    <input type="checkbox" name="isRecurring" id="isRecurring"  value="false">IS Recurring<br>
+    <input type="checkbox" name="billingAddressRequired" id="billingAddressRequired" value="false">IS Billing Address Required<br>
+    <button onclick="onAddMerchantDataClicked()">Add</button>
     <br>
     
     <h2>Order Details</h2>
