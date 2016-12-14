@@ -259,10 +259,26 @@ function onAddMerchantDataClicked() {
   var allowedCardBrand = document.getElementById('allowedCardBrand').value;
   
   
-  var isRecurring = document.getElementById('isRecurring').value;
-  var billingAddressRequired = document.getElementById('billingAddressRequired').value;
+  var isRecurring = document.getElementById('isRecurring').checked;
+  var billingAddressRequired = document.getElementById('billingAddressRequired').checked;
   
 }
+
+function onClearDataClicked() {
+  //var ulElem = document.getElementById('orderItemsList');
+  //ulElem.innerHTML = '';
+  //ulElem.removeChild(ulElem.childNodes[i])
+  document.getElementById('productId').value='';
+  document.getElementById('merchantRefId').value='';
+  document.getElementById('orderNumber').value='';
+  document.getElementById('paymentProtocol').value='';
+  document.getElementById('merchantName').value='';
+  document.getElementById('allowedCardBrand').value='';
+  
+  document.getElementById('isRecurring').checked='false';
+  document.getElementById('billingAddressRequired').checked='true';
+}
+
 
 function onAddItemClicked() {
   var itemName = document.getElementById('itemName').value;
@@ -271,7 +287,7 @@ function onAddItemClicked() {
   var ul = document.getElementById("orderItemsList");
   var li = document.createElement("li");
   
-  li.appendChild(document.createTextNode(itemName+itemPrice));
+  li.appendChild(document.createTextNode(itemName+'   '+itemPrice));
   ul.appendChild(li);
   
   document.getElementById('itemName').value='';
@@ -282,12 +298,6 @@ function onClearItemClicked() {
   var ulElem = document.getElementById('orderItemsList');
   ulElem.innerHTML = '';
   //ulElem.removeChild(ulElem.childNodes[i])
-  document.getElementById('productId').value='';
-  document.getElementById('merchantRefId').value='';
-  document.getElementById('orderNumber').value='';
-  document.getElementById('paymentProtocol').value='';
-  document.getElementById('merchantName').value='';
-  document.getElementById('allowedCardBrand').value='';
-  document.getElementById('isRecurring').value='false';
-  document.getElementById('billingAddressRequired').value='true';
+  document.getElementById('itemName').value='';
+  document.getElementById('itemPrice').value='';
 }
