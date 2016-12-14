@@ -208,3 +208,7 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
     request = buildPaymentRequest();
   }
 }
+
+function getSupportedMethod(){
+  return 'https://rsolomakhin.github.io/bobpay';
+}
