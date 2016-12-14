@@ -277,3 +277,17 @@ function onAddItemClicked() {
   document.getElementById('itemName').value='';
   document.getElementById('itemPrice').value='';
 }
+
+function onClearItemClicked() {
+  var ulElem = document.getElementById('orderItemsList');
+  ulElem.innerHTML = '';
+  //ulElem.removeChild(ulElem.childNodes[i])
+  document.getElementById('productId').value='';
+  document.getElementById('merchantRefId').value='';
+  document.getElementById('orderNumber').value='';
+  document.getElementById('paymentProtocol').value='';
+  document.getElementById('merchantName').value='';
+  document.getElementById('allowedCardBrand').value='';
+  document.getElementById('isRecurring').value='false';
+  document.getElementById('billingAddressRequired').value='true';
+}
