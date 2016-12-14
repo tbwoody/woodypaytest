@@ -249,3 +249,17 @@ function onClearMethodClicked() {
   //ulElem.removeChild(ulElem.childNodes[i])
   document.getElementById('supportedMethods').value='';
 }
+
+function onAddMerchantDataClicked() {
+  var productId = document.getElementById('productId').value;
+  var merchantRefId = document.getElementById('merchantRefId').value;
+  var orderNumber = document.getElementById('orderNumber').value;
+  var paymentProtocol = document.getElementById('paymentProtocol').value;
+  var merchantName = document.getElementById('merchantName').value;
+  var allowedCardBrand = document.getElementById('allowedCardBrand').value;
+  
+  
+  var isRecurring = document.getElementById('isRecurring').value;
+  var billingAddressRequired = document.getElementById('billingAddressRequired').value;
+  
+}
