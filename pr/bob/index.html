@@ -54,20 +54,16 @@
     </select>
     <br><br>
     
-    <strong>View and Add items</strong>
+    <strong>View and Add items</strong><br>
     Item:<br>
-    <input type="text" name="itemName">
+    <input type="text" name="itemName" id="itemName">
     <br>
     Price:<br>
-    <input type="text" name="itemPrice">
-    <button onclick="onBuyClicked()">Add</button>
+    <input type="text" name="itemPrice" id="itemPrice">
+    <button onclick="onAddItemClicked()">Add</button>
     <br><br>
     
-    <ul style="list-style-type:none">
-    <li>iphone 6s plus      $1.23</li>
-    <li>Samsung Note 7      $2.31</li>
-    <li>Samsung Note 5      $1.11</li>
-    <li>Samsung Galaxy S8   $1.11</li>  
+    <ul id="orderItemsList" style="list-style-type:none">
     </ul> 
     
     <h2>Payment Options</h2>
