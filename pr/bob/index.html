@@ -13,7 +13,12 @@
     <h2>Supported Instruments</h2>
     <strong>Supported Methods</strong><br>
     <input type="text" name="supportedMethods" id="supportedMethods">
-    <button onclick="onBuyClicked()">Add</button>
+    <button onclick="onAddMethodClicked()">Add</button>
+    <button onclick="onClearMethodClicked()">Clear All</button>
+    <br>
+    <ul id="supportedMethodsList" style="list-style-type:none">
+    </ul>
+    
     <br><br>
    
     <strong>Merchant Data</strong><br>
