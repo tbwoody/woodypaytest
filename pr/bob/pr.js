@@ -231,3 +231,18 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
     request = buildPaymentRequest();
   }
 }
+
+function onAddMethodClicked() {
+  var ul = document.getElementById("supportedMethodsList");
+  var li = document.createElement("li");
+  var methodName = document.getElementById('supportedMethods').value;
+  li.appendChild(document.createTextNode(methodName));
+  ul.appendChild(li);
+}
+
+function onClearMethodClicked() {
+  
+  var ulElem = document.getElementById('supportedMethodsList');
+  document.getElementById('myList').innerHTML = '';
+  //ulElem.removeChild(ulElem.childNodes[i])
+}
