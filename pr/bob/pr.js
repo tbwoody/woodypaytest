@@ -275,8 +275,8 @@ function onClearDataClicked() {
   document.getElementById('merchantName').value='';
   document.getElementById('allowedCardBrand').value='';
   
-  document.getElementById('isRecurring').checked='false';
-  document.getElementById('billingAddressRequired').checked='true';
+  document.getElementById('isRecurring').checked=false;
+  document.getElementById('billingAddressRequired').checked=true;
 }
 
 
