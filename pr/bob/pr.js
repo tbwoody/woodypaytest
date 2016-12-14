@@ -1,6 +1,27 @@
 /* global done:false */
 /* global error:false */
 /* global PaymentRequest:false */
+function saveUserInputsToStorage(){
+  
+  if (typeof(Storage) !== "undefined") {
+    // Code for localStorage/sessionStorage.
+    var methodName = document.getElementById('supportedMethods').value;
+    localStorage.setItem("supportedMethods", methodName);
+  } else {
+      // Sorry! No Web Storage support..
+  }
+}
+
+function init(){
+  
+  if (typeof(Storage) !== "undefined") {
+    // Code for localStorage/sessionStorage.
+    document.getElementById('supportedMethods').value = localStorage.getItem("supportedMethods");
+  } else {
+      // Sorry! No Web Storage support..
+  }
+}
+window.onload = init;
 
 /**
  * Initializes the payment request object.
@@ -184,6 +205,8 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
     error('PaymentRequest API is not supported.');
     return;
   }
+  
+  saveUserInputsToStorage();
 
   try {
     request.show()
@@ -208,25 +231,3 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
     request = buildPaymentRequest();
   }
 }
-
-function saveUserInputsToStorage(){
-  
-  if (typeof(Storage) !== "undefined") {
-    // Code for localStorage/sessionStorage.
-    var methodName = document.getElementById('supportedMethods').value;
-    localStorage.setItem("supportedMethods", methodName);
-  } else {
-      // Sorry! No Web Storage support..
-  }
-}
-
-function init(){
-  
-  if (typeof(Storage) !== "undefined") {
-    // Code for localStorage/sessionStorage.
-    document.getElementById('supportedMethods').value = localStorage.getItem("supportedMethods");
-} else {
-    // Sorry! No Web Storage support..
-}
-}
-window.onload = init;
