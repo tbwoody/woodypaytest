@@ -214,6 +214,6 @@ function getSupportedMethod(){
 }
 
 function init(){
-  document.getElementById('supportedMethods').set('value',getSupportedMethod());
+  document.getElementById('supportedMethods').value = 'https://';
 }
 window.onload = init;
