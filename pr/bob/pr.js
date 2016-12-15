@@ -120,12 +120,12 @@ function buildDetails(){
   var displayItems = [];
   var orderItemsArray = JSON.parse(localStorage["orderItemsArray"]);
   var orderPricesArray = JSON.parse(localStorage["orderPricesArray"]);
-  for(var i = 0; i < orderItemsArray.length; ++i){
+  for(var i = 0; i < 5; ++i){
     var item = {};
-    item.label = orderItemsArray[i];
+    item.label = 'item name';
     var itemAmount = {};
     itemAmount.currency = 'UFO';
-    itemAmount.value = orderPricesArray[i];
+    itemAmount.value = '3.33';
     item.amount = itemAmount;
     displayItems.push(item);
   }
