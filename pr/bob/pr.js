@@ -5,8 +5,17 @@ function saveUserInputsToStorage(){
   
   if (typeof(Storage) !== "undefined") {
     // Code for localStorage/sessionStorage.
-    var methodName = document.getElementById('supportedMethods').value;
-    localStorage.setItem("supportedMethods", methodName);
+    //var methodName = document.getElementById('supportedMethods').value;
+    //localStorage.setItem("supportedMethods", methodName);
+    
+    var LIs = document.getElementById('supportedMethodsList').childNodes;
+    var list = [];
+    for( var i = 0; i < LIs.length; ++i )
+    {
+        var LI = LIs[i];
+        list.push(LI.innerText || LI.textContent);
+    }
+    localStorage.setItem("supportedMethods", list);
   } else {
       // Sorry! No Web Storage support..
   }
@@ -16,7 +25,17 @@ function init(){
   
   if (typeof(Storage) !== "undefined") {
     // Code for localStorage/sessionStorage.
-    document.getElementById('supportedMethods').value = localStorage.getItem("supportedMethods");
+    //document.getElementById('supportedMethods').value = localStorage.getItem("supportedMethods");
+    var supportedMethodsArray = localStorage.getItem("supportedMethods");
+    
+    var ul = document.getElementById("supportedMethodsList");
+    for(var i = 0; i < supportedMethodsArray; i++) {
+      var li = document.createElement("li");
+      //var methodName = document.getElementById('supportedMethods').value;
+      li.appendChild(document.createTextNode(supportedMethodsArray[i]));
+      ul.appendChild(li);
+    }
+    
   } else {
       // Sorry! No Web Storage support..
   }
