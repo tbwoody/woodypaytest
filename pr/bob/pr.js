@@ -15,7 +15,8 @@ function saveUserInputsToStorage(){
         var LI = LIs[i];
         list.push(LI.innerText || LI.textContent);
     }
-    localStorage.setItem("supportedMethods", JSON.stringify(list));
+    //localStorage.setItem("supportedMethods", JSON.stringify(list));
+    localStorage["supportedMethods"] = JSON.stringify(list);
   } else {
       // Sorry! No Web Storage support..
   }
@@ -26,7 +27,8 @@ function init(){
   if (typeof(Storage) !== "undefined") {
     // Code for localStorage/sessionStorage.
     //document.getElementById('supportedMethods').value = localStorage.getItem("supportedMethods");
-    var supportedMethodsArray = localStorage.getItem("supportedMethods");
+    //var supportedMethodsArray = localStorage.getItem("supportedMethods");
+    var supportedMethodsArray = JSON.parse(localStorage["supportedMethods"]);
     
     var ul = JSON.parse(document.getElementById("supportedMethodsList"));
     for(var i = 0; i < supportedMethodsArray.length; i++) {
