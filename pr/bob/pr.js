@@ -126,8 +126,10 @@ function buildDetails(){
   var orderPricesArray = [];
   if(orderItemsList.length > 0){
     if(typeof(Storage) !== "undefined"){
-      //orderItemsArray = JSON.parse(localStorage["orderItemsArray"]);
-      //orderPricesArray = JSON.parse(localStorage["orderPricesArray"]);
+      error('Before reading from local storage.');
+      
+      orderItemsArray = JSON.parse(localStorage["orderItemsArray"]);
+      orderPricesArray = JSON.parse(localStorage["orderPricesArray"]);
       
       error('orderItemsArray length = ' + orderItemsArray.length);
       error('orderPricesArray length = ' + orderPricesArray.length);
