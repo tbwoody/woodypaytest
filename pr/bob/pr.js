@@ -29,7 +29,7 @@ function init(){
     var supportedMethodsArray = localStorage.getItem("supportedMethods");
     
     var ul = document.getElementById("supportedMethodsList");
-    for(var i = 0; i < supportedMethodsArray; i++) {
+    for(var i = 0; i < supportedMethodsArray.length; i++) {
       var li = document.createElement("li");
       //var methodName = document.getElementById('supportedMethods').value;
       li.appendChild(document.createTextNode(supportedMethodsArray[i]));
