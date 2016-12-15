@@ -309,8 +309,8 @@ function onAddItemClicked() {
   
   var ul = document.getElementById("orderItemsList");
   var li = document.createElement("li");
-  
-  li.appendChild(document.createTextNode(itemName+'&nbsp;&nbsp;&nbsp;&nbsp;'+itemPrice));
+  var blank = '&nbsp &nbsp &nbsp &nbsp &nbsp';
+  li.appendChild(document.createTextNode(itemName+blank+itemPrice));
   ul.appendChild(li);
   
   document.getElementById('itemName').value='';
