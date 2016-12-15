@@ -15,7 +15,7 @@ function saveUserInputsToStorage(){
         var LI = LIs[i];
         list.push(LI.innerText || LI.textContent);
     }
-    localStorage.setItem("supportedMethods", list);
+    localStorage.setItem("supportedMethods", JSON.stringify(list));
   } else {
       // Sorry! No Web Storage support..
   }
@@ -28,7 +28,7 @@ function init(){
     //document.getElementById('supportedMethods').value = localStorage.getItem("supportedMethods");
     var supportedMethodsArray = localStorage.getItem("supportedMethods");
     
-    var ul = document.getElementById("supportedMethodsList");
+    var ul = JSON.parse(document.getElementById("supportedMethodsList"));
     for(var i = 0; i < supportedMethodsArray.length; i++) {
       var li = document.createElement("li");
       //var methodName = document.getElementById('supportedMethods').value;
