@@ -30,7 +30,7 @@ function saveUserInputsToStorage(){
     localStorage.setItem("billingAddressRequired", billingAddressRequired);
     
     ////////////////////////////////////////////////////////////////////////////////////////
-    
+    /*
     var supportedMethodsList = document.getElementById('supportedMethodsList').childNodes;
     var supportedMethodsArray = [];
     for( var i = 0; i < supportedMethodsList.length; ++i )
@@ -40,6 +40,7 @@ function saveUserInputsToStorage(){
     }
     //localStorage.setItem("supportedMethods", JSON.stringify(list));
     localStorage["supportedMethods"] = JSON.stringify(supportedMethodsArray);
+    */
     
     //////////////////////////////////////////////////////////////////////////////////////
     
@@ -393,6 +394,16 @@ function onAddMethodClicked() {
   ul.appendChild(li);
   
   document.getElementById('supportedMethods').value='';
+  
+  var supportedMethodsList = document.getElementById('supportedMethodsList').childNodes;
+  var supportedMethodsArray = [];
+    for( var i = 0; i < supportedMethodsList.length; ++i )
+    {
+        var method = supportedMethodsList[i];
+        supportedMethodsArray.push(method.innerText || method.textContent);
+    }
+    //localStorage.setItem("supportedMethods", JSON.stringify(list));
+    localStorage["supportedMethods"] = JSON.stringify(supportedMethodsArray);
 }
 
 function onClearMethodClicked() {
