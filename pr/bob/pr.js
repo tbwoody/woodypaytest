@@ -118,8 +118,8 @@ function buildDetails(){
   
   
   var displayItems = [];
-  var orderItemsArray = JSON.parse(localStorage["orderItemsArray"]);
-  var orderPricesArray = JSON.parse(localStorage["orderPricesArray"]);
+  //var orderItemsArray = JSON.parse(localStorage["orderItemsArray"]);
+  //var orderPricesArray = JSON.parse(localStorage["orderPricesArray"]);
   for(var i = 0; i < 5; ++i){
     var item = {};
     item.label = 'item name';
