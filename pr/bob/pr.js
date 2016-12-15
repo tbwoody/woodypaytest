@@ -109,10 +109,8 @@ function buildSupportedInstruments(){
 
 
 function buildDetails(){
-  var details = {};
   var total = {};
-  
-  total.label = 'Total Donation Amount';
+  total.label = 'Total';
   var amountTotal = {};
   amountTotal.currency = 'UFO';
   amountTotal.value = '100.00';
@@ -120,18 +118,19 @@ function buildDetails(){
   
   
   var displayItems = [];
-  
-  for(var i = 0; i < 3; ++i){
+  var orderItemsArray = JSON.parse(localStorage["orderItemsArray"]);
+  var orderPricesArray = JSON.parse(localStorage["orderPricesArray"]);
+  for(var i = 0; i < orderItemsArray.length; ++i){
     var item = {};
-    item.label = 'XXXXXX';
+    item.label = orderItemsArray[i];
     var itemAmount = {};
     itemAmount.currency = 'UFO';
-    itemAmount.value = '100.00';
+    itemAmount.value = orderPricesArray[i];
     item.amount = itemAmount;
     displayItems.push(item);
   }
   
-  
+  var details = {};
   details.total = total;
   details.displayItems = displayItems;
   
@@ -428,6 +427,17 @@ function onAddItemClicked() {
   
   document.getElementById('itemName').value='';
   document.getElementById('itemPrice').value='';
+  
+  //save item to internal storage
+  if (typeof(Storage) !== "undefined") {
+    var orderItemsArray = JSON.parse(localStorage["orderItemsArray"]);
+    orderItemsArray.push(itemName);
+    localStorage["orderItemsArray"] = JSON.stringify(orderItemsArray);
+    
+    var orderPricesArray = JSON.parse(localStorage["orderPricesArray"]);
+    orderPricesArray.push(itemPrice);
+    localStorage["orderPricesArray"] = JSON.stringify(orderPricesArray);
+  }
 }
 
 function onClearItemClicked() {
