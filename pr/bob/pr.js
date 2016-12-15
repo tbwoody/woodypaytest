@@ -109,6 +109,8 @@ function buildSupportedInstruments(){
 
 
 function buildDetails(){
+  error('building the details for payment request.');
+  
   var total = {};
   total.label = 'Total';
   var amountTotal = {};
