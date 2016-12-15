@@ -325,8 +325,13 @@ var request = buildPaymentRequest();
  * Launches payment request for Bob Pay.
  */
 function onBuyClicked() {  // eslint-disable-line no-unused-vars
-  if (!window.PaymentRequest || !request) {
+  if (!window.PaymentRequest) {
     error('PaymentRequest API is not supported.');
+    return;
+  }
+  
+  if (!request) {
+    error('Developer error: PaymentRequest is invalid.');
     return;
   }
   
