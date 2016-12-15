@@ -30,7 +30,7 @@ function init(){
     //var supportedMethodsArray = localStorage.getItem("supportedMethods");
     var supportedMethodsArray = JSON.parse(localStorage["supportedMethods"]);
     
-    var ul = JSON.parse(document.getElementById("supportedMethodsList"));
+    var ul = document.getElementById("supportedMethodsList");
     for(var i = 0; i < supportedMethodsArray.length; i++) {
       var li = document.createElement("li");
       //var methodName = document.getElementById('supportedMethods').value;
