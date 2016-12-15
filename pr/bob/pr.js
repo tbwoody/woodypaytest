@@ -168,8 +168,8 @@ function buildPaymentRequest() {
   ];
 
   
-  var details = buildDetails();
-  /*
+  //var details = buildDetails();
+  
   var details = {
     total: {label: 'Donation', amount: {currency: 'USD', value: '95.00'}},
     displayItems: [
@@ -203,7 +203,7 @@ function buildPaymentRequest() {
       }
     ]
   };
-  */
+  
 
   
   var options = {
