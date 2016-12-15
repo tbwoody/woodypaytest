@@ -102,6 +102,48 @@ function init(){
 }
 window.onload = init;
 
+
+function buildSupportedInstruments(){
+  
+}
+
+
+function buildDetails(){
+  var details = {};
+  var total = {};
+  
+  total.label = 'Total Donation Amount';
+  var amountTotal = {};
+  amountTotal.currency = 'UFO';
+  amountTotal.value = '100.00';
+  total.amount = amountTotal;
+  
+  
+  var displayItems = [];
+  
+  for(var i = 0; i < 3; ++i){
+    var item = {};
+    item.label = 'XXXXXX';
+    var itemAmount = {};
+    itemAmount.currency = 'UFO';
+    itemAmount.value = '100.00';
+    item.amount = itemAmount;
+    displayItems.push(item);
+  }
+  
+  
+  details.total = total;
+  details.displayItems = displayItems;
+  
+  return details;
+}
+
+
+function buildOptions(){
+  
+}
+
+
 /**
  * Initializes the payment request object.
  */
@@ -126,6 +168,9 @@ function buildPaymentRequest() {
     }
   ];
 
+  
+  var details = buildDetails();
+  /*
   var details = {
     total: {label: 'Donation', amount: {currency: 'USD', value: '95.00'}},
     displayItems: [
@@ -159,6 +204,7 @@ function buildPaymentRequest() {
       }
     ]
   };
+  */
 
   
   var options = {
