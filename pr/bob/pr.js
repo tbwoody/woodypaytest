@@ -339,7 +339,7 @@ function buildPaymentRequest() {
 }
 
 
-var request = buildPaymentRequest();
+//var request = buildPaymentRequest();
 
 /**
  * Launches payment request for Bob Pay.
@@ -349,6 +349,8 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
     error('PaymentRequest API is not supported.');
     return;
   }
+  
+  var request = buildPaymentRequest();
   
   if (!request) {
     error('Developer error: PaymentRequest is invalid.');
