@@ -269,6 +269,8 @@ function onClearMethodClicked() {
   ulElem.innerHTML = '';
   //ulElem.removeChild(ulElem.childNodes[i])
   document.getElementById('supportedMethods').value='';
+  
+  localStorage.removeItem("supportedMethods");
 }
 
 function onAddMerchantDataClicked() {
