@@ -5,18 +5,54 @@ function saveUserInputsToStorage(){
   
   if (typeof(Storage) !== "undefined") {
     // Code for localStorage/sessionStorage.
-    //var methodName = document.getElementById('supportedMethods').value;
-    //localStorage.setItem("supportedMethods", methodName);
+    var productId = document.getElementById('productId').value;
+    localStorage.setItem("productId", productId);
     
-    var LIs = document.getElementById('supportedMethodsList').childNodes;
-    var list = [];
-    for( var i = 0; i < LIs.length; ++i )
+    var merchantRefId = document.getElementById('merchantRefId').value;
+    localStorage.setItem("merchantRefId", merchantRefId);
+    
+    var orderNumber = document.getElementById('orderNumber').value;
+    localStorage.setItem("orderNumber", orderNumber);
+    
+    var paymentProtocol = document.getElementById('paymentProtocol').value;
+    localStorage.setItem("paymentProtocol", paymentProtocol);
+    
+    var merchantName = document.getElementById('merchantName').value;
+    localStorage.setItem("merchantName", merchantName);
+    
+    var allowedCardBrand = document.getElementById('allowedCardBrand').value;
+    localStorage.setItem("allowedCardBrand", allowedCardBrand);
+    
+    var isRecurring = JSON.stringify(document.getElementById('isRecurring').checked);
+    localStorage.setItem("isRecurring", isRecurring);
+    
+    var billingAddressRequired = JSON.stringify(document.getElementById('billingAddressRequired').checked);
+    localStorage.setItem("billingAddressRequired", billingAddressRequired);
+    
+    ////////////////////////////////////////////////////////////////////////////////////////
+    
+    var supportedMethodsList = document.getElementById('supportedMethodsList').childNodes;
+    var supportedMethodsArray = [];
+    for( var i = 0; i < supportedMethodsList.length; ++i )
     {
-        var LI = LIs[i];
-        list.push(LI.innerText || LI.textContent);
+        var method = supportedMethodsList[i];
+        supportedMethodsArray.push(method.innerText || method.textContent);
     }
     //localStorage.setItem("supportedMethods", JSON.stringify(list));
-    localStorage["supportedMethods"] = JSON.stringify(list);
+    localStorage["supportedMethods"] = JSON.stringify(supportedMethodsArray);
+    
+    //////////////////////////////////////////////////////////////////////////////////////
+    
+    var orderItemsList = document.getElementById('orderItemsList').childNodes;
+    var orderItemsArray = [];
+    for( var j = 0; j < orderItemsList.length; ++j )
+    {
+        var item = orderItemsList[j];
+        orderItemsArray.push(item.innerText || item.textContent);
+    }
+    //localStorage.setItem("supportedMethods", JSON.stringify(list));
+    localStorage["orderItems"] = JSON.stringify(orderItemsArray);
+    
   } else {
       // Sorry! No Web Storage support..
   }
@@ -26,16 +62,38 @@ function init(){
   
   if (typeof(Storage) !== "undefined") {
     // Code for localStorage/sessionStorage.
-    //document.getElementById('supportedMethods').value = localStorage.getItem("supportedMethods");
-    //var supportedMethodsArray = localStorage.getItem("supportedMethods");
-    var supportedMethodsArray = JSON.parse(localStorage["supportedMethods"]);
+    document.getElementById('productId').value = localStorage.getItem("productId");
+    document.getElementById('merchantRefId').value = localStorage.getItem("merchantRefId");
+    document.getElementById('orderNumber').value = localStorage.getItem("orderNumber");
+    document.getElementById('merchantName').value = localStorage.getItem("merchantName");
+    document.getElementById('allowedCardBrand').value = localStorage.getItem("allowedCardBrand");
+    document.getElementById('paymentProtocol').value = localStorage.getItem("paymentProtocol");
+    document.getElementById('isRecurring').checked = (localStorage.getItem("isRecurring")=='true')?true:false;
+    document.getElementById('billingAddressRequired').checked = (localStorage.getItem("billingAddressRequired")=='true')?true:false;
     
-    var ul = document.getElementById("supportedMethodsList");
+    //////////////////////////////////////////////////////////////////////////////////////
+    
+    //var supportedMethodsArray = localStorage.getItem("supportedMethods");
+    
+    
+    var supportedMethodsArray = JSON.parse(localStorage["supportedMethods"]);
+    var supportedMethodsList = document.getElementById("supportedMethodsList");
     for(var i = 0; i < supportedMethodsArray.length; i++) {
-      var li = document.createElement("li");
+      var methodLi = document.createElement("li");
       //var methodName = document.getElementById('supportedMethods').value;
-      li.appendChild(document.createTextNode(supportedMethodsArray[i]));
-      ul.appendChild(li);
+      methodLi.appendChild(document.createTextNode(supportedMethodsArray[i]));
+      supportedMethodsList.appendChild(methodLi);
+    }
+    
+    //////////////////////////////////////////////////////////////
+    
+    var orderItemsArray = JSON.parse(localStorage["orderItems"]);
+    var orderItemsList = document.getElementById("orderItemsList");
+    for(var j = 0; j < orderItemsArray.length; j++) {
+      var itemLi = document.createElement("li");
+      //var methodName = document.getElementById('supportedMethods').value;
+      itemLi.appendChild(document.createTextNode(orderItemsArray[j]));
+      orderItemsList.appendChild(itemLi);
     }
     
   } else {
@@ -300,6 +358,15 @@ function onClearDataClicked() {
   
   document.getElementById('isRecurring').checked=false;
   document.getElementById('billingAddressRequired').checked=false;
+  
+  localStorage.removeItem("productId");
+  localStorage.removeItem("merchantRefId");
+  localStorage.removeItem("orderNumber");
+  localStorage.removeItem("paymentProtocol");
+  localStorage.removeItem("merchantName");
+  localStorage.removeItem("allowedCardBrand");
+  localStorage.removeItem("isRecurring");
+  localStorage.removeItem("billingAddressRequired");
 }
 
 
@@ -323,4 +390,6 @@ function onClearItemClicked() {
   //ulElem.removeChild(ulElem.childNodes[i])
   document.getElementById('itemName').value='';
   document.getElementById('itemPrice').value='';
+  
+  localStorage.removeItem("orderItems");
 }
