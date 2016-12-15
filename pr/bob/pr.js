@@ -127,6 +127,9 @@ function buildDetails(){
       orderItemsArray = JSON.parse(localStorage["orderItemsArray"]);
       orderPricesArray = JSON.parse(localStorage["orderPricesArray"]);
       
+      error('orderItemsArray length = ' + orderItemsArray.length);
+      error('orderPricesArray length = ' + orderPricesArray.length);
+      
       for(var i = 0; i < orderItemsList.length; ++i){
         var item = {};
         item.label = 'item name';
@@ -136,7 +139,11 @@ function buildDetails(){
         item.amount = itemAmount;
         displayItems.push(item);
       }
+    } else {
+      error('No internal storage is supported.');
     }
+  } else {
+    error('No items were found from your order');
   }
   
   
