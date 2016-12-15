@@ -112,23 +112,34 @@ function buildDetails(){
   var total = {};
   total.label = 'Total';
   var amountTotal = {};
-  amountTotal.currency = 'UFO';
+  amountTotal.currency = 'USD';
   amountTotal.value = '100.00';
   total.amount = amountTotal;
   
   
   var displayItems = [];
-  //var orderItemsArray = JSON.parse(localStorage["orderItemsArray"]);
-  //var orderPricesArray = JSON.parse(localStorage["orderPricesArray"]);
-  for(var i = 0; i < 5; ++i){
-    var item = {};
-    item.label = 'item name';
-    var itemAmount = {};
-    itemAmount.currency = 'UFO';
-    itemAmount.value = '3.33';
-    item.amount = itemAmount;
-    displayItems.push(item);
+  var orderItemsList = document.getElementById('orderItemsList').childNodes;
+  
+  var orderItemsArray = [];
+  var orderPricesArray = [];
+  if(orderItemsList.length > 0){
+    if(typeof(Storage) !== "undefined"){
+      orderItemsArray = JSON.parse(localStorage["orderItemsArray"]);
+      orderPricesArray = JSON.parse(localStorage["orderPricesArray"]);
+      
+      for(var i = 0; i < orderItemsList.length; ++i){
+        var item = {};
+        item.label = 'item name';
+        var itemAmount = {};
+        itemAmount.currency = 'USD';
+        itemAmount.value = '3.33';
+        item.amount = itemAmount;
+        displayItems.push(item);
+      }
+    }
   }
+  
+  
   
   var details = {};
   details.total = total;
@@ -435,11 +446,21 @@ function onAddItemClicked() {
   
   //save item to internal storage
   if (typeof(Storage) !== "undefined") {
-    var orderItemsArray = JSON.parse(localStorage["orderItemsArray"]);
+    
+    var orderItemsList = document.getElementById('orderItemsList').childNodes;
+    var orderItemsArray = [];
+    
+    if(orderItemsList.length > 0){
+      orderItemsArray = JSON.parse(localStorage["orderItemsArray"]);
+    }
+    
     orderItemsArray.push(itemName);
     localStorage["orderItemsArray"] = JSON.stringify(orderItemsArray);
     
-    var orderPricesArray = JSON.parse(localStorage["orderPricesArray"]);
+    var orderPricesArray = [];
+    if(orderItemsList.length > 0){
+      orderPricesArray = JSON.parse(localStorage["orderPricesArray"]);
+    }
     orderPricesArray.push(itemPrice);
     localStorage["orderPricesArray"] = JSON.stringify(orderPricesArray);
   }
@@ -453,4 +474,6 @@ function onClearItemClicked() {
   document.getElementById('itemPrice').value='';
   
   localStorage.removeItem("orderItems");
+  localStorage.removeItem("orderItemsArray");
+  localStorage.removeItem("orderPricesArray");
 }
