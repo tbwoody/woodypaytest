@@ -98,7 +98,7 @@ function init(){
     for(var j = 0; j < orderItemsArray.length; j++) {
       var itemLi = document.createElement("li");
       //var methodName = document.getElementById('supportedMethods').value;
-      itemLi.appendChild(document.createTextNode(orderItemsArray[j]) + blank + orderPricesArray[i]);
+      itemLi.appendChild(document.createTextNode(orderItemsArray[j]) + blank + orderPricesArray[j]);
       orderItemsList.appendChild(itemLi);
     }
     
@@ -134,8 +134,8 @@ function buildDetails(){
     if(typeof(Storage) !== "undefined"){
       error('Before reading from local storage.');
       
-      orderItemsArray = JSON.parse(localStorage["orderItemsArray"]);
-      orderPricesArray = JSON.parse(localStorage["orderPricesArray"]);
+      orderItemsArray = JSON.parse(localStorage.getItem("orderItemsArray"));
+      orderPricesArray = JSON.parse(localStorage.getItem("orderPricesArray"));
       
       error('orderItemsArray length = ' + orderItemsArray.length);
       error('orderPricesArray length = ' + orderPricesArray.length);
