@@ -78,7 +78,7 @@ function init(){
     
     //var supportedMethodsArray = localStorage.getItem("supportedMethods");
     
-    
+    /*
     var supportedMethodsArray = JSON.parse(localStorage.getItem("supportedMethods"));
     var supportedMethodsList = document.getElementById("supportedMethodsList");
     
@@ -87,8 +87,8 @@ function init(){
       //var methodName = document.getElementById('supportedMethods').value;
       methodLi.appendChild(document.createTextNode(supportedMethodsArray[i]));
       supportedMethodsList.appendChild(methodLi);
-      
     }
+    */
     
     //////////////////////////////////////////////////////////////
     /*
