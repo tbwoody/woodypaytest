@@ -89,12 +89,16 @@ function init(){
     
     //////////////////////////////////////////////////////////////
     
-    var orderItemsArray = JSON.parse(localStorage["orderItems"]);
+    //var orderItemsArray = JSON.parse(localStorage["orderItems"]);
+    var orderItemsArray = JSON.parse(localStorage["orderItemsArray"]);
+    var orderPricesArray = JSON.parse(localStorage["orderPricesArray"]);
     var orderItemsList = document.getElementById("orderItemsList");
+    var blank = '\xa0\xa0\xa0\xa0\xa0';
+    
     for(var j = 0; j < orderItemsArray.length; j++) {
       var itemLi = document.createElement("li");
       //var methodName = document.getElementById('supportedMethods').value;
-      itemLi.appendChild(document.createTextNode(orderItemsArray[j]));
+      itemLi.appendChild(document.createTextNode(orderItemsArray[j]) + blank + orderPricesArray[i]);
       orderItemsList.appendChild(itemLi);
     }
     
@@ -457,10 +461,21 @@ function onClearDataClicked() {
 
 
 function onAddItemClicked() {
+  var orderItemsArray = [];
+  var orderPricesArray = [];
+  
   var itemName = document.getElementById('itemName').value;
   var itemPrice = document.getElementById('itemPrice').value;
   
   var ul = document.getElementById("orderItemsList");
+  if(ul.length > 0){
+    if(typeof(Storage) !== "undefined"){
+      orderItemsArray = JSON.parse(localStorage["orderItemsArray"]);
+      orderPricesArray = JSON.parse(localStorage["orderPricesArray"]);
+    }
+  }
+  
+  
   var li = document.createElement("li");
   var blank = '\xa0\xa0\xa0\xa0\xa0';
   li.appendChild(document.createTextNode(itemName+blank+itemPrice));
@@ -474,20 +489,9 @@ function onAddItemClicked() {
   //save item to internal storage
   if (typeof(Storage) !== "undefined") {
     
-    var orderItemsList = document.getElementById('orderItemsList').childNodes;
-    var orderItemsArray = [];
-    
-    if(orderItemsList.length > 0){
-      orderItemsArray = JSON.parse(localStorage["orderItemsArray"]);
-    }
-    
     orderItemsArray.push(itemName);
     localStorage["orderItemsArray"] = JSON.stringify(orderItemsArray);
     
-    var orderPricesArray = [];
-    if(orderItemsList.length > 0){
-      orderPricesArray = JSON.parse(localStorage["orderPricesArray"]);
-    }
     orderPricesArray.push(itemPrice);
     localStorage["orderPricesArray"] = JSON.stringify(orderPricesArray);
     
