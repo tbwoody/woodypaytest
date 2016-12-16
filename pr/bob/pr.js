@@ -472,6 +472,8 @@ function onAddItemClicked() {
     if(typeof(Storage) !== "undefined"){
       orderItemsArray = JSON.parse(localStorage["orderItemsArray"]);
       orderPricesArray = JSON.parse(localStorage["orderPricesArray"]);
+      error('Current orderItemsArray length = ' + orderItemsArray.length);
+      error('Current orderPricesArray length = ' + orderPricesArray.length);
     }
   }
   
