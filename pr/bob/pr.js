@@ -62,7 +62,7 @@ function saveUserInputsToStorage(){
 }
 
 function init(){
-  
+  error('loading......');
   if (typeof(Storage) !== "undefined") {
     // Code for localStorage/sessionStorage.
     document.getElementById('productId').value = localStorage.getItem("productId");
