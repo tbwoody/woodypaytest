@@ -43,7 +43,7 @@ function saveUserInputsToStorage(){
     */
     
     //////////////////////////////////////////////////////////////////////////////////////
-    
+    /*
     var orderItemsList = document.getElementById('orderItemsList').childNodes;
     var orderItemsArray = [];
     for( var j = 0; j < orderItemsList.length; ++j )
@@ -53,6 +53,7 @@ function saveUserInputsToStorage(){
     }
     //localStorage.setItem("supportedMethods", JSON.stringify(list));
     localStorage["orderItems"] = JSON.stringify(orderItemsArray);
+    */
     
   } else {
       // Sorry! No Web Storage support..
@@ -487,6 +488,10 @@ function onAddItemClicked() {
     }
     orderPricesArray.push(itemPrice);
     localStorage["orderPricesArray"] = JSON.stringify(orderPricesArray);
+    error('Add item name = ' + itemName);
+    error('Add item price = ' + itemPrice);
+    error('Number of Names = ' + orderItemsArray.length);
+    error('Number of Prices = ' + orderPricesArray.length);
   }
 }
 
