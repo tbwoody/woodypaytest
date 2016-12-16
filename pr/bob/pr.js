@@ -78,7 +78,7 @@ function init(){
     //var supportedMethodsArray = localStorage.getItem("supportedMethods");
     
     
-    var supportedMethodsArray = JSON.parse(localStorage["supportedMethods"]);
+    var supportedMethodsArray = JSON.parse(localStorage.getItem("supportedMethods"));
     var supportedMethodsList = document.getElementById("supportedMethodsList");
     for(var i = 0; i < supportedMethodsArray.length; i++) {
       var methodLi = document.createElement("li");
@@ -90,8 +90,8 @@ function init(){
     //////////////////////////////////////////////////////////////
     
     //var orderItemsArray = JSON.parse(localStorage["orderItems"]);
-    var orderItemsArray = JSON.parse(localStorage["orderItemsArray"]);
-    var orderPricesArray = JSON.parse(localStorage["orderPricesArray"]);
+    var orderItemsArray = JSON.parse(localStorage.getItem("orderItemsArray"));
+    var orderPricesArray = JSON.parse(localStorage.getItem("orderPricesArray"));
     var orderItemsList = document.getElementById("orderItemsList");
     var blank = '\xa0\xa0\xa0\xa0\xa0';
     
@@ -408,7 +408,7 @@ function onAddMethodClicked() {
         supportedMethodsArray.push(method.innerText || method.textContent);
     }
     //localStorage.setItem("supportedMethods", JSON.stringify(list));
-    localStorage["supportedMethods"] = JSON.stringify(supportedMethodsArray);
+    localStorage.setItem("supportedMethods",JSON.stringify(supportedMethodsArray));
 }
 
 function onClearMethodClicked() {
@@ -470,8 +470,8 @@ function onAddItemClicked() {
   var ul = document.getElementById("orderItemsList");
   if(ul.length > 0){
     if(typeof(Storage) !== "undefined"){
-      orderItemsArray = JSON.parse(localStorage["orderItemsArray"]);
-      orderPricesArray = JSON.parse(localStorage["orderPricesArray"]);
+      orderItemsArray = JSON.parse(localStorage.getItem("orderItemsArray"));
+      orderPricesArray = JSON.parse(localStorage.getItem("orderPricesArray"));
       error('Current orderItemsArray length = ' + orderItemsArray.length);
       error('Current orderPricesArray length = ' + orderPricesArray.length);
     }
@@ -492,10 +492,10 @@ function onAddItemClicked() {
   if (typeof(Storage) !== "undefined") {
     
     orderItemsArray.push(itemName);
-    localStorage["orderItemsArray"] = JSON.stringify(orderItemsArray);
+    localStorage.setItem("orderItemsArray",JSON.stringify(orderItemsArray));
     
     orderPricesArray.push(itemPrice);
-    localStorage["orderPricesArray"] = JSON.stringify(orderPricesArray);
+    localStorage.setItem("orderPricesArray",JSON.stringify(orderPricesArray));
     
     error('Number of Names = ' + orderItemsArray.length);
     error('Number of Prices = ' + orderPricesArray.length);
