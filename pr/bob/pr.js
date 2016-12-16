@@ -469,6 +469,8 @@ function onAddItemClicked() {
   document.getElementById('itemName').value='';
   document.getElementById('itemPrice').value='';
   
+  error('Add item name = ' + itemName);
+  error('Add item price = ' + itemPrice);
   //save item to internal storage
   if (typeof(Storage) !== "undefined") {
     
@@ -488,8 +490,7 @@ function onAddItemClicked() {
     }
     orderPricesArray.push(itemPrice);
     localStorage["orderPricesArray"] = JSON.stringify(orderPricesArray);
-    error('Add item name = ' + itemName);
-    error('Add item price = ' + itemPrice);
+    
     error('Number of Names = ' + orderItemsArray.length);
     error('Number of Prices = ' + orderPricesArray.length);
   }
