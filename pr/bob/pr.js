@@ -1,4 +1,3 @@
-
 /* global done:false */
 /* global error:false */
 /* global PaymentRequest:false */
@@ -62,7 +61,7 @@ function saveUserInputsToStorage(){
 }
 
 function init(){
-  error('loading......');
+  
   if (typeof(Storage) !== "undefined") {
     // Code for localStorage/sessionStorage.
     document.getElementById('productId').value = localStorage.getItem("productId");
@@ -81,14 +80,12 @@ function init(){
     
     var supportedMethodsArray = JSON.parse(localStorage.getItem("supportedMethods"));
     var supportedMethodsList = document.getElementById("supportedMethodsList");
-    
     for(var i = 0; i < supportedMethodsArray.length; i++) {
       var methodLi = document.createElement("li");
       //var methodName = document.getElementById('supportedMethods').value;
       methodLi.appendChild(document.createTextNode(supportedMethodsArray[i]));
       supportedMethodsList.appendChild(methodLi);
     }
-    
     
     //////////////////////////////////////////////////////////////
     
@@ -98,17 +95,12 @@ function init(){
     var orderItemsList = document.getElementById("orderItemsList");
     var blank = '\xa0\xa0\xa0\xa0\xa0';
     
-    error('init: Number of Names = ' + orderItemsArray.length);
-    error('init: Number of Prices = ' + orderPricesArray.length);
-    
     for(var j = 0; j < orderItemsArray.length; j++) {
       var itemLi = document.createElement("li");
       //var methodName = document.getElementById('supportedMethods').value;
-      itemLi.appendChild(document.createTextNode('why item is not set?');
+      itemLi.appendChild(document.createTextNode(orderItemsArray[j]) + blank + orderPricesArray[j]);
       orderItemsList.appendChild(itemLi);
-      error('init: add item to list');
     }
-    
     
   } else {
       // Sorry! No Web Storage support..
@@ -150,7 +142,7 @@ function buildDetails(){
       
       for(var i = 0; i < orderItemsList.length; ++i){
         var item = {};
-        item.label = 'items dond';
+        item.label = 'item name';
         var itemAmount = {};
         itemAmount.currency = 'USD';
         itemAmount.value = '3.33';
@@ -349,7 +341,6 @@ function buildPaymentRequest() {
   }).catch(function(err) {
     console.error('Uh oh, something bad happened: ' + err.message);
   });
-
 */
   return request;
 }
@@ -479,12 +470,16 @@ function onAddItemClicked() {
   var ulArray = ul.childNodes;
   if(ulArray.length > 0){
     if(typeof(Storage) !== "undefined"){
-      //error('Before getting existing items.');
+      error('Before getting existing items.');
       orderItemsArray = JSON.parse(localStorage.getItem("orderItemsArray"));
       orderPricesArray = JSON.parse(localStorage.getItem("orderPricesArray"));
-      //error('Current orderItemsArray length = ' + orderItemsArray.length);
-      //error('Current orderPricesArray length = ' + orderPricesArray.length);
-    } 
+      error('Current orderItemsArray length = ' + orderItemsArray.length);
+      error('Current orderPricesArray length = ' + orderPricesArray.length);
+    } else {
+      error('local storage is not supported.');
+    }
+  } else {
+    error('Current length of list is 0.');
   }
   
   
@@ -496,8 +491,8 @@ function onAddItemClicked() {
   document.getElementById('itemName').value='';
   document.getElementById('itemPrice').value='';
   
-  //error('Add item name = ' + itemName);
-  //error('Add item price = ' + itemPrice);
+  error('Add item name = ' + itemName);
+  error('Add item price = ' + itemPrice);
   //save item to internal storage
   if (typeof(Storage) !== "undefined") {
     
@@ -519,7 +514,7 @@ function onClearItemClicked() {
   document.getElementById('itemName').value='';
   document.getElementById('itemPrice').value='';
   
-  //localStorage.removeItem("orderItems");
+  localStorage.removeItem("orderItems");
   localStorage.removeItem("orderItemsArray");
   localStorage.removeItem("orderPricesArray");
 }
