@@ -150,7 +150,7 @@ function buildDetails(){
       
       for(var i = 0; i < orderItemsList.length; ++i){
         var item = {};
-        item.label = orderItemsArray[i];
+        item.label = 'items dond';
         var itemAmount = {};
         itemAmount.currency = 'USD';
         itemAmount.value = '3.33';
