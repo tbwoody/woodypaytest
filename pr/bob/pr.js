@@ -1,4 +1,5 @@
-/* global done:false */
+
+*//* global done:false */
 /* global error:false */
 /* global PaymentRequest:false */
 function saveUserInputsToStorage(){
@@ -90,7 +91,7 @@ function init(){
     }
     
     //////////////////////////////////////////////////////////////
-    
+    /*
     //var orderItemsArray = JSON.parse(localStorage["orderItems"]);
     var orderItemsArray = JSON.parse(localStorage.getItem("orderItemsArray"));
     var orderPricesArray = JSON.parse(localStorage.getItem("orderPricesArray"));
@@ -107,6 +108,7 @@ function init(){
       orderItemsList.appendChild(itemLi);
       error('init: add item to list');
     }
+    */
     
   } else {
       // Sorry! No Web Storage support..
