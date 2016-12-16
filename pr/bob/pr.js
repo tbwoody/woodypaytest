@@ -104,7 +104,7 @@ function init(){
     for(var j = 0; j < orderItemsArray.length; j++) {
       var itemLi = document.createElement("li");
       //var methodName = document.getElementById('supportedMethods').value;
-      itemLi.appendChild(document.createTextNode('item'));
+      itemLi.appendChild(document.createTextNode(orderItemsArray[j] + blank + orderPricesArray[j]));
       orderItemsList.appendChild(itemLi);
       
       //error('add item for order items');
