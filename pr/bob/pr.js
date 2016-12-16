@@ -470,11 +470,16 @@ function onAddItemClicked() {
   var ul = document.getElementById("orderItemsList");
   if(ul.length > 0){
     if(typeof(Storage) !== "undefined"){
+      error('Before getting existing items.');
       orderItemsArray = JSON.parse(localStorage.getItem("orderItemsArray"));
       orderPricesArray = JSON.parse(localStorage.getItem("orderPricesArray"));
       error('Current orderItemsArray length = ' + orderItemsArray.length);
       error('Current orderPricesArray length = ' + orderPricesArray.length);
+    } else {
+      error('local storage is not supported.');
     }
+  } else {
+    error('Current length of list is 0.');
   }
   
   
