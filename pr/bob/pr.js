@@ -62,6 +62,8 @@ function saveUserInputsToStorage(){
 
 function init(){
   
+  error('loading......');
+  
   if (typeof(Storage) !== "undefined") {
     // Code for localStorage/sessionStorage.
     document.getElementById('productId').value = localStorage.getItem("productId");
@@ -92,6 +94,10 @@ function init(){
     //var orderItemsArray = JSON.parse(localStorage["orderItems"]);
     var orderItemsArray = JSON.parse(localStorage.getItem("orderItemsArray"));
     var orderPricesArray = JSON.parse(localStorage.getItem("orderPricesArray"));
+    
+    error('Current orderItemsArray length = ' + orderItemsArray.length);
+    error('Current orderPricesArray length = ' + orderPricesArray.length);
+    
     var orderItemsList = document.getElementById("orderItemsList");
     var blank = '\xa0\xa0\xa0\xa0\xa0';
     
@@ -100,6 +106,8 @@ function init(){
       //var methodName = document.getElementById('supportedMethods').value;
       itemLi.appendChild(document.createTextNode(orderItemsArray[j]) + blank + orderPricesArray[j]);
       orderItemsList.appendChild(itemLi);
+      
+      error('add item for order items');
     }
     
   } else {
