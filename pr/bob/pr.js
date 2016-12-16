@@ -80,14 +80,13 @@ function init(){
     
     var supportedMethodsArray = JSON.parse(localStorage.getItem("supportedMethods"));
     var supportedMethodsList = document.getElementById("supportedMethodsList");
-    error('init: Number of Names = ' + orderItemsArray.length);
-    error('init: Number of Prices = ' + orderPricesArray.length);
+    
     for(var i = 0; i < supportedMethodsArray.length; i++) {
       var methodLi = document.createElement("li");
       //var methodName = document.getElementById('supportedMethods').value;
       methodLi.appendChild(document.createTextNode(supportedMethodsArray[i]));
       supportedMethodsList.appendChild(methodLi);
-      error('init: add item to list');
+      
     }
     
     //////////////////////////////////////////////////////////////
@@ -98,11 +97,15 @@ function init(){
     var orderItemsList = document.getElementById("orderItemsList");
     var blank = '\xa0\xa0\xa0\xa0\xa0';
     
+    error('init: Number of Names = ' + orderItemsArray.length);
+    error('init: Number of Prices = ' + orderPricesArray.length);
+    
     for(var j = 0; j < orderItemsArray.length; j++) {
       var itemLi = document.createElement("li");
       //var methodName = document.getElementById('supportedMethods').value;
       itemLi.appendChild(document.createTextNode('why item is not set?');
       orderItemsList.appendChild(itemLi);
+      error('init: add item to list');
     }
     
   } else {
