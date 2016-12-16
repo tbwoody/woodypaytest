@@ -468,7 +468,8 @@ function onAddItemClicked() {
   var itemPrice = document.getElementById('itemPrice').value;
   
   var ul = document.getElementById("orderItemsList");
-  if(ul.length > 0){
+  var ulArray = ul.childNodes;
+  if(ulArray.length > 0){
     if(typeof(Storage) !== "undefined"){
       error('Before getting existing items.');
       orderItemsArray = JSON.parse(localStorage.getItem("orderItemsArray"));
