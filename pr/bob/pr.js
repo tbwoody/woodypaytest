@@ -198,7 +198,8 @@ function buildPaymentRequest() {
         isRecurring: false,
         merchantName: 'ABC Store',
         billingAddressRequired: false,
-        allowedCardBrand:['VI','MC','AX','DS']
+        allowedCardBrand:['VI','DS']
+        //allowedCardBrand:['VI','MC','AX','DS']
       }
     }
   ];
