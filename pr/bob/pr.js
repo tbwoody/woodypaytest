@@ -203,7 +203,7 @@ function buildPaymentRequest() {
         paymentProtocol: 'PROTOCOL_3DS',
         isRecurring: false,
         merchantName: 'ABC Store',
-        billingAddressRequired: false,
+        billingAddressRequired: true,
         //allowedCardBrand:['VI','DS']
         allowedCardBrand:['VI','MC','AX','DS']
       }
