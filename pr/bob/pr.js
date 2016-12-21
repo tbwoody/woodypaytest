@@ -152,10 +152,10 @@ function buildDetails(){
       
       for(var i = 0; i < orderItemsList.length; ++i){
         var item = {};
-        item.label = 'item name';
+        item.label = orderItemsArray[i];
         var itemAmount = {};
         itemAmount.currency = 'USD';
-        itemAmount.value = '3.33';
+        itemAmount.value = orderPricesArray[i];
         item.amount = itemAmount;
         displayItems.push(item);
       }
@@ -207,8 +207,8 @@ function buildPaymentRequest() {
   ];
 
   
-  //var details = buildDetails();
-  
+  var details = buildDetails();
+  /*
   var details = {
     total: {label: 'Donation', amount: {currency: 'USD', value: '95.00'}},
     displayItems: [
@@ -242,7 +242,7 @@ function buildPaymentRequest() {
       }
     ]
   };
-  
+  */
 
   
   var options = {
