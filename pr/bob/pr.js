@@ -20,8 +20,8 @@ function saveUserInputsToStorage(){
     var merchantName = document.getElementById('merchantName').value;
     localStorage.setItem("merchantName", merchantName);
     
-    var allowedCardBrand = document.getElementById('allowedCardBrand').value;
-    localStorage.setItem("allowedCardBrand", allowedCardBrand);
+    //var allowedCardBrand = document.getElementById('allowedCardBrand').value;
+    //localStorage.setItem("allowedCardBrand", allowedCardBrand);
     
     var isRecurring = JSON.stringify(document.getElementById('isRecurring').checked);
     localStorage.setItem("isRecurring", isRecurring);
@@ -70,7 +70,7 @@ function init(){
     document.getElementById('merchantRefId').value = localStorage.getItem("merchantRefId");
     document.getElementById('orderNumber').value = localStorage.getItem("orderNumber");
     document.getElementById('merchantName').value = localStorage.getItem("merchantName");
-    document.getElementById('allowedCardBrand').value = localStorage.getItem("allowedCardBrand");
+    //document.getElementById('allowedCardBrand').value = localStorage.getItem("allowedCardBrand");
     document.getElementById('paymentProtocol').value = localStorage.getItem("paymentProtocol");
     document.getElementById('isRecurring').checked = (localStorage.getItem("isRecurring")=='true')?true:false;
     document.getElementById('billingAddressRequired').checked = (localStorage.getItem("billingAddressRequired")=='true')?true:false;
