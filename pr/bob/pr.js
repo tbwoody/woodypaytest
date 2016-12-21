@@ -151,7 +151,7 @@ function buildDetails(){
       error('orderPricesArray length = ' + orderPricesArray.length);
       error('orderItemsList length = ' + orderItemsList.length);
       
-      for(var i = 0; i < orderItemsList.length; ++i){
+      for(var i = 0; i < orderItemsArray.length; ++i){
         error('item = ' + orderItemsArray[i]);
         error('price = ' + orderPricesArray[i]);
         
