@@ -195,9 +195,6 @@ function buildPaymentRequest() {
 
   var supportedInstruments = [
       {
-    				supportedMethods: ['amex', 'discover','mastercard','visa']
-      },
-      {
         supportedMethods: ['https://rsolomakhin.github.io/bobpay',
                            'https://tbwoody.github.io/woodypaytest',
                           'https://samsung.com/pay'],
