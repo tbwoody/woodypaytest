@@ -207,7 +207,7 @@ function buildPaymentRequest() {
           merchantName: 'ABC Store',
           billingAddressRequired: true,
           //allowedCardBrand:['VI','DS']
-          allowedCardBrand:['VI','MC','AX','DS']
+          allowedCardNetworks:['VI','MC','AX','DS']
         }
     }
   ];
