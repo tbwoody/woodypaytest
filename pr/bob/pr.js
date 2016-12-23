@@ -194,21 +194,24 @@ function buildPaymentRequest() {
   }
 
   var supportedInstruments = [
-    {
-      supportedMethods: ['https://rsolomakhin.github.io/bobpay',
-                         'https://tbwoody.github.io/woodypaytest',
-                        'https://samsung.com/pay'],
-      data:{
-        productId: '12345',
-        merchantRefId: '1321345154',
-        orderNumber: '1002',
-        paymentProtocol: 'PROTOCOL_3DS',
-        isRecurring: false,
-        merchantName: 'ABC Store',
-        billingAddressRequired: true,
-        //allowedCardBrand:['VI','DS']
-        allowedCardNetworks:['VI','MC','AX','DS']
-      }
+      {
+    				supportedMethods: ['amex', 'discover','mastercard','visa']
+      },
+      {
+        supportedMethods: ['https://rsolomakhin.github.io/bobpay',
+                           'https://tbwoody.github.io/woodypaytest',
+                          'https://samsung.com/pay'],
+        data:{
+          productId: '12345',
+          merchantRefId: '1321345154',
+          orderNumber: '1002',
+          paymentProtocol: 'PROTOCOL_3DS',
+          isRecurring: false,
+          merchantName: 'ABC Store',
+          billingAddressRequired: true,
+          //allowedCardBrand:['VI','DS']
+          allowedCardNetworks:['VI','MC','AX','DS']
+        }
     }
   ];
 
