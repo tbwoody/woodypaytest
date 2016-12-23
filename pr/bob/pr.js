@@ -195,7 +195,9 @@ function buildPaymentRequest() {
 
   var supportedInstruments = [
     {
-      supportedMethods: ['https://rsolomakhin.github.io/bobpay','https://tbwoody.github.io/woodypaytest'],
+      supportedMethods: ['https://rsolomakhin.github.io/bobpay',
+                         'https://tbwoody.github.io/woodypaytest',
+                        'https://samsung.com/pay'],
       data:{
         productId: '12345',
         merchantRefId: '1321345154',
