@@ -199,15 +199,15 @@ function buildPaymentRequest() {
                            'https://tbwoody.github.io/woodypaytest',
                           'https://samsung.com/pay'],
         data:{
-          productId: '12345',
-          merchantRefId: '1321345154',
-          orderNumber: '1002',
+          productId: 'b30f1a1ea0b244458d5a5b',
+          merchantRefId: 'MerchantReferenceId',
+          orderNumber: 'AMZ007MAR',
           paymentProtocol: 'PROTOCOL_3DS',
           isRecurring: false,
           merchantName: 'ABC Store',
           billingAddressRequired: true,
-          //allowedCardBrand:['VI','DS']
-          allowedCardNetworks:['VI','MC','AX','DS']
+          allowedCardBrand:['VISA','MASTERCARD']
+          //allowedCardNetworks:['VI','MC','AX','DS']
         }
     }
   ];
