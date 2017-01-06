@@ -206,7 +206,7 @@ function buildPaymentRequest() {
           isRecurring: false,
           merchantName: 'ABC Store',
           billingAddressRequired: true,
-          allowedCardBrand:['VISA','MASTERCARD']
+          allowedCardNetworks:['VISA','MASTERCARD']
           //allowedCardNetworks:['VI','MC','AX','DS']
         }
     }
