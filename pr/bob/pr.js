@@ -131,7 +131,7 @@ function buildDetails(){
   total.label = 'Total';
   var amountTotal = {};
   amountTotal.currency = 'USD';
-  amountTotal.value = '100.00';
+  amountTotal.value = '1.00';
   total.amount = amountTotal;
   
   
