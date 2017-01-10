@@ -426,6 +426,12 @@ function onAddMethodClicked() {
   var ul = document.getElementById("supportedMethodsList");
   var li = document.createElement("li");
   var methodName = document.getElementById('supportedMethods').value;
+  
+  if(methodName==null || methodName.trim()==""){
+    error('Pleae enter the payment method!');
+    return;
+  }
+  
   li.appendChild(document.createTextNode(methodName));
   ul.appendChild(li);
   
@@ -498,6 +504,16 @@ function onAddItemClicked() {
   var itemName = document.getElementById('itemName').value;
   var itemPrice = document.getElementById('itemPrice').value;
   
+  if(itemName==null || itemName.trim()==""){
+    error('Pleae enter the item name!');
+    return;
+  }
+  
+  if(itemPrice==null || itemPrice.trim()==""){
+    error('Pleae enter the item price!');
+    return;
+  }
+  
   var ul = document.getElementById("orderItemsList");
   var ulArray = ul.childNodes;
   if(ulArray.length > 0){
@@ -511,8 +527,8 @@ function onAddItemClicked() {
         orderPricesArray = JSON.parse(localStorage.getItem("orderPricesArray"));
       }
       
-      error('Current orderItemsArray length = ' + orderItemsArray.length);
-      error('Current orderPricesArray length = ' + orderPricesArray.length);
+      //error('Current orderItemsArray length = ' + orderItemsArray.length);
+      //error('Current orderPricesArray length = ' + orderPricesArray.length);
     } else {
       error('local storage is not supported.');
     }
@@ -529,8 +545,8 @@ function onAddItemClicked() {
   document.getElementById('itemName').value='';
   document.getElementById('itemPrice').value='';
   
-  error('Add item name = ' + itemName);
-  error('Add item price = ' + itemPrice);
+  //error('Add item name = ' + itemName);
+  //error('Add item price = ' + itemPrice);
   //save item to internal storage
   if (typeof(Storage) !== "undefined") {
     
@@ -540,8 +556,8 @@ function onAddItemClicked() {
     orderPricesArray.push(itemPrice);
     localStorage.setItem("orderPricesArray",JSON.stringify(orderPricesArray));
     
-    error('Number of Names = ' + orderItemsArray.length);
-    error('Number of Prices = ' + orderPricesArray.length);
+    //error('Number of Names = ' + orderItemsArray.length);
+    //error('Number of Prices = ' + orderPricesArray.length);
   }
 }
 
