@@ -181,7 +181,19 @@ function buildDetails(){
 
 
 function buildOptions(){
+  var shipping = document.getElementById('requestShipping').checked;
+  var email = document.getElementById('requestPayerEmail').checked;
+  var phone = document.getElementById('requestPayerPhone').checked;
+  var name = document.getElementById('requestPayerName').checked;
   
+  var options = {
+    requestShipping: shipping,
+    requestPayerEmail: email,
+    requestPayerPhone: phone,
+    requestPayerName: name
+  };
+  
+  return options;
 }
 
 
@@ -248,13 +260,15 @@ function buildPaymentRequest() {
   };
   */
 
-  
+  /*
   var options = {
     requestShipping: false,
     requestPayerEmail: false,
     requestPayerPhone: false,
     requestPayerName: false
   };
+  */
+  var options = buildOptions();
 
   
   var request = null;
