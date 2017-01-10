@@ -127,10 +127,13 @@ function buildSupportedInstruments(){
 function buildDetails(){
   error('building the details for payment request.');
   
+  var currencyOptionBox = document.getElementById('CurrencyCode');
+  var currencyText= sel.options[currencyOptionBox.selectedIndex].text;
+  
   var total = {};
   total.label = 'Total';
   var amountTotal = {};
-  amountTotal.currency = 'USD';
+  amountTotal.currency = currencyText;
   amountTotal.value = '1.00';
   total.amount = amountTotal;
   
@@ -158,7 +161,7 @@ function buildDetails(){
         var item = {};
         item.label = orderItemsArray[i];
         var itemAmount = {};
-        itemAmount.currency = 'USD';
+        itemAmount.currency = currencyText;
         itemAmount.value = orderPricesArray[i];
         item.amount = itemAmount;
         displayItems.push(item);
