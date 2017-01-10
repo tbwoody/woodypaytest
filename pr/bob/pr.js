@@ -128,7 +128,7 @@ function buildDetails(){
   error('building the details for payment request.');
   
   var currencyOptionBox = document.getElementById('CurrencyCode');
-  var currencyText= sel.options[currencyOptionBox.selectedIndex].text;
+  var currencyText= currencyOptionBox.options[currencyOptionBox.selectedIndex].text;
   
   var total = {};
   total.label = 'Total';
