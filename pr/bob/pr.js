@@ -62,7 +62,7 @@ function saveUserInputsToStorage(){
 
 function init(){
   
-  error('loading......');
+  //error('loading......');
   
   if (typeof(Storage) !== "undefined") {
     // Code for localStorage/sessionStorage.
@@ -98,8 +98,8 @@ function init(){
       var orderItemsArray = JSON.parse(localStorage.getItem("orderItemsArray"));
       var orderPricesArray = JSON.parse(localStorage.getItem("orderPricesArray"));
 
-      error('Current orderItemsArray length = ' + orderItemsArray.length);
-      error('Current orderPricesArray length = ' + orderPricesArray.length);
+      //error('Current orderItemsArray length = ' + orderItemsArray.length);
+      //error('Current orderPricesArray length = ' + orderPricesArray.length);
 
       var orderItemsList = document.getElementById("orderItemsList");
       var blank = '\xa0\xa0\xa0\xa0\xa0';
@@ -125,7 +125,7 @@ function buildSupportedInstruments(){
 
 
 function buildDetails(){
-  error('building the details for payment request.');
+  //error('building the details for payment request.');
   
   var currencyOptionBox = document.getElementById('CurrencyCode');
   var currencyText= currencyOptionBox.options[currencyOptionBox.selectedIndex].text;
