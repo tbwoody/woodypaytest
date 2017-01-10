@@ -145,7 +145,7 @@ function buildDetails(){
   var orderPricesArray = [];
   if(orderItemsList.length > 0){
     if(typeof(Storage) !== "undefined"){
-      error('Before reading from local storage.');
+      //error('Before reading from local storage.');
       
       orderItemsArray = JSON.parse(localStorage.getItem("orderItemsArray"));
       orderPricesArray = JSON.parse(localStorage.getItem("orderPricesArray"));
@@ -155,8 +155,8 @@ function buildDetails(){
       error('orderItemsList length = ' + orderItemsList.length);
       
       for(var i = 0; i < orderItemsArray.length; ++i){
-        error('item = ' + orderItemsArray[i]);
-        error('price = ' + orderPricesArray[i]);
+        //error('item = ' + orderItemsArray[i]);
+        //error('price = ' + orderPricesArray[i]);
         
         var item = {};
         item.label = orderItemsArray[i];
@@ -518,7 +518,7 @@ function onAddItemClicked() {
   var ulArray = ul.childNodes;
   if(ulArray.length > 0){
     if(typeof(Storage) !== "undefined"){
-      error('Before getting existing items.');
+      //error('Before getting existing items.');
       if (localStorage.getItem("orderItemsArray") !== null) {
         orderItemsArray = JSON.parse(localStorage.getItem("orderItemsArray"));
       }
