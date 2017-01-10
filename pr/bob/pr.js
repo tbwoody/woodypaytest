@@ -262,10 +262,10 @@ function buildPaymentRequest() {
 
   
   var options = {
-    requestShipping: false,
-    requestPayerEmail: false,
-    requestPayerPhone: false,
-    requestPayerName: false
+    requestShipping: document.getElementById('requestShipping').checked,
+    requestPayerEmail: document.getElementById('requestPayerEmail').checked,
+    requestPayerPhone: document.getElementById('requestPayerPhone').checked,
+    requestPayerName: document.getElementById('requestPayerName').checked
   };
   
   //var options = buildOptions();
