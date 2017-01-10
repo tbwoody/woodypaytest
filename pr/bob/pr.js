@@ -260,15 +260,15 @@ function buildPaymentRequest() {
   };
   */
 
-  /*
+  
   var options = {
     requestShipping: false,
     requestPayerEmail: false,
     requestPayerPhone: false,
     requestPayerName: false
   };
-  */
-  var options = buildOptions();
+  
+  //var options = buildOptions();
 
   
   var request = null;
