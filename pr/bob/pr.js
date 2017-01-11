@@ -150,9 +150,9 @@ function buildDetails(){
       orderItemsArray = JSON.parse(localStorage.getItem("orderItemsArray"));
       orderPricesArray = JSON.parse(localStorage.getItem("orderPricesArray"));
       
-      error('orderItemsArray length = ' + orderItemsArray.length);
-      error('orderPricesArray length = ' + orderPricesArray.length);
-      error('orderItemsList length = ' + orderItemsList.length);
+      //error('orderItemsArray length = ' + orderItemsArray.length);
+      //error('orderPricesArray length = ' + orderPricesArray.length);
+      //error('orderItemsList length = ' + orderItemsList.length);
       
       for(var i = 0; i < orderItemsArray.length; ++i){
         //error('item = ' + orderItemsArray[i]);
