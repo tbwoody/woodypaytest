@@ -430,7 +430,7 @@ function ValidURL(str) {
     '(\?[;&a-z\d%_.~+=-]*)?'+ // query string
     '(\#[-a-z\d_]*)?$','i'); // fragment locater
   if(!pattern.test(str)) {
-    alert("Please enter a valid URL.");
+    //alert("Please enter a valid URL.");
     return false;
   } else {
     return true;
@@ -448,8 +448,10 @@ function onAddMethodClicked() {
     return;
   }
   
-  if(ValidURL(methodName)){
+  var valid = ValidURL(methodName);
+  if(valid == false){
     error('This is not a valid url!');
+    return;
   }
   
   li.appendChild(document.createTextNode(methodName));
