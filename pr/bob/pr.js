@@ -425,7 +425,6 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
 function ValidURL(str) {
   var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
   if(!regex .test(str)) {
-    alert("Please enter valid URL.");
     return false;
   } else {
     return true;
@@ -445,7 +444,7 @@ function onAddMethodClicked() {
   
   var valid = ValidURL(methodName);
   if(valid == false){
-    error('This is not a valid url!');
+    alert("Please enter valid URL.");
     return;
   }
   
