@@ -407,13 +407,13 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
                   done('Thank you!', instrumentResponse);
                 })
                 .catch(function(err) {
-                  error(err);
+                  error('SBrowser: ' + err);
                   request = buildPaymentRequest();
                 });
           }, 500);
         })
         .catch(function(err) {
-          error(err);
+          error('SBrowser: ' + err);
           request = buildPaymentRequest();
         });
   } catch (e) {
