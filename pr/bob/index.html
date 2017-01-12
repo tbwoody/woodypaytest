@@ -8,81 +8,76 @@
   <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
-  <div id="contents" style="overflow-y:scroll; overflow-x:hidden;">
-    
-    <div class="inner">
-        <div class="scroller">
-            <h1>Woody Pay Test</h1>
-            <h2>Supported Instruments</h2>
-            <strong>Supported Methods</strong><br>
-            <input type="url" name="supportedMethods" id="supportedMethods">
-            <button onclick="onAddMethodClicked()">Add</button>
-            <button onclick="onClearMethodClicked()">Clear All</button>
-            <br>
-            <ul id="supportedMethodsList" style="list-style-type:none">
-            </ul>
+  <div id="contents" style="overflow-y:scroll; overflow-x:scroll;">
+      <h2>Supported Instruments</h2>
+      <strong>Supported Methods</strong><br>
+      <input type="url" name="supportedMethods" id="supportedMethods">
+      <button onclick="onAddMethodClicked()">Add</button>
+      <button onclick="onClearMethodClicked()">Clear All</button>
+      <br>
+      <ul id="supportedMethodsList" style="list-style-type:none">
+      </ul>
 
-            <br><br>
+      <br><br>
 
-            <strong>Merchant Data</strong><br>
-            productId:
-            <input type="text" name="productId" id="productId"><br><br>
-            merchantRefId:
-            <input type="text" name="merchantRefId" id="merchantRefId"><br><br>
-            orderNumber:
-            <input type="text" name="orderNumber" id="orderNumber"><br><br>
-            paymentProtocol:
-            <input type="text" name="paymentProtocol" id="paymentProtocol"><br><br>
-            merchantName:
-            <input type="text" name="merchantName" id="merchantName"><br><br>
-            allowedCards:
-            <input type="checkbox" name="VI" id="VI">VI
-            <input type="checkbox" name="MC" id="MC">MC
-            <input type="checkbox" name="AX" id="AX">AX
-            <input type="checkbox" name="DS" id="DS">DS<br><br>
+      <strong>Merchant Data</strong><br>
+      productId:
+      <input type="text" name="productId" id="productId"><br><br>
+      merchantRefId:
+      <input type="text" name="merchantRefId" id="merchantRefId"><br><br>
+      orderNumber:
+      <input type="text" name="orderNumber" id="orderNumber"><br><br>
+      paymentProtocol:
+      <input type="text" name="paymentProtocol" id="paymentProtocol"><br><br>
+      merchantName:
+      <input type="text" name="merchantName" id="merchantName"><br><br>
+      allowedCards:
+      <input type="checkbox" name="VI" id="VI">VI
+      <input type="checkbox" name="MC" id="MC">MC
+      <input type="checkbox" name="AX" id="AX">AX
+      <input type="checkbox" name="DS" id="DS">DS<br><br>
 
-            <input type="checkbox" name="isRecurring" id="isRecurring">IS Recurring<br><br>
-            <input type="checkbox" name="billingAddressRequired" id="billingAddressRequired">IS Billing Address Required<br>
-            <br>
-            <button onclick="onAddMerchantDataClicked()">Add</button>
-            <button onclick="onClearDataClicked()">Clear All</button>
-            <br><br>
+      <input type="checkbox" name="isRecurring" id="isRecurring">IS Recurring<br><br>
+      <input type="checkbox" name="billingAddressRequired" id="billingAddressRequired">IS Billing Address Required<br>
+      <br>
+      <button onclick="onAddMerchantDataClicked()">Add</button>
+      <button onclick="onClearDataClicked()">Clear All</button>
+      <br><br>
 
-            <h2>Order Details</h2>
-            <strong>Currency Code</strong>
-            <select name="CurrencyCode" id="CurrencyCode">
-            <option value="USD">USD</option>
-            <option value="INR">INR</option>
-            <option value="KRW">KRW</option>
-            <option value="EUR">EUR</option>
-            <option value="AUD">AUD</option>
-            <option value="JPY">JPY</option>
-            <option value="CNY">CNY</option>
-            <option value="GBP">GBP</option>
-            </select>
-            <br><br>
+      <h2>Order Details</h2>
+      <strong>Currency Code</strong>
+      <select name="CurrencyCode" id="CurrencyCode">
+      <option value="USD">USD</option>
+      <option value="INR">INR</option>
+      <option value="KRW">KRW</option>
+      <option value="EUR">EUR</option>
+      <option value="AUD">AUD</option>
+      <option value="JPY">JPY</option>
+      <option value="CNY">CNY</option>
+      <option value="GBP">GBP</option>
+      </select>
+      <br><br>
 
-            <strong>View and Add items</strong><br>
-            Item:<br>
-            <input type="text" name="itemName" id="itemName">
-            <br>
-            Price:<br>
-            <input type="text" name="itemPrice" id="itemPrice">
-            <button onclick="onAddItemClicked()">Add</button>
-            <button onclick="onClearItemClicked()">Clear All</button>
-            <br><br>
+      <strong>View and Add items</strong><br>
+      Item:<br>
+      <input type="text" name="itemName" id="itemName">
+      <br>
+      Price:<br>
+      <input type="text" name="itemPrice" id="itemPrice">
+      <button onclick="onAddItemClicked()">Add</button>
+      <button onclick="onClearItemClicked()">Clear All</button>
+      <br><br>
 
-            <ul id="orderItemsList" style="list-style-type:none">
-            </ul> 
+      <ul id="orderItemsList" style="list-style-type:none">
+      </ul> 
 
-            <h2>Payment Options</h2>
-            <input type="checkbox" name="requestShipping"  id="requestShipping">Request Shipping <br>
-            <input type="checkbox" name="requestPayerEmail"  id="requestPayerEmail">Request Payer Email <br>
-            <input type="checkbox" name="requestPayerPhone"  id="requestPayerPhone">Request Payer Phone <br>
-            <input type="checkbox" name="requestPayerName"  id="requestPayerName">Request Payer Name <br>
-            <p><button onclick="onBuyClicked()">Buy</button></p>
-        </div>
-    </div>
+      <h2>Payment Options</h2>
+      <input type="checkbox" name="requestShipping"  id="requestShipping">Request Shipping <br>
+      <input type="checkbox" name="requestPayerEmail"  id="requestPayerEmail">Request Payer Email <br>
+      <input type="checkbox" name="requestPayerPhone"  id="requestPayerPhone">Request Payer Phone <br>
+      <input type="checkbox" name="requestPayerName"  id="requestPayerName">Request Payer Name <br>
+      <p><button onclick="onBuyClicked()">Buy</button></p>
+      <h1>Woody Pay Test</h1>
   </div>
   <pre id="msg"></pre>
   <script src="../util.js"></script>
