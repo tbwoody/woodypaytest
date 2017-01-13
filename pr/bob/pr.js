@@ -248,6 +248,10 @@ function buildPaymentRequest() {
     return null;
   }
   
+  if (localStorage.getItem("supportedMethods") == null) {
+    return null;
+  }
+  
   var cards = [];
   
   var idx = 0;
@@ -270,17 +274,19 @@ function buildPaymentRequest() {
     cards[idx] = "DISCOVER";
     idx = idx + 1;
   }
+  
+  var supportedMethodsArray = JSON.parse(localStorage.getItem("supportedMethods"));
 
   var supportedInstruments = [
       {
-        supportedMethods: ['https://samsung.com/pay'],
+        supportedMethods: supportedMethodsArray,
         data:{
           productId: 'b30f1a1ea0b244458d5a5b',
           merchantRefId: 'MerchantReferenceId',
           orderNumber: 'AMZ007MAR',
           paymentProtocol: 'PROTOCOL_3DS',
           isRecurring: document.getElementById('isRecurring').checked,
-          merchantName: 'ABC Store',
+          merchantName: localStorage.getItem("merchantName"),
           billingAddressRequired: document.getElementById('billingAddressRequired').checked,
           //allowedCardNetworks:['VISA','MASTERCARD']
           allowedCardNetworks:cards
