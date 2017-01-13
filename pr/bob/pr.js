@@ -260,6 +260,16 @@ function buildPaymentRequest() {
     cards[idx] = "MASTERCARD";
     idx = idx + 1;
   }
+  
+  if(document.getElementById('AX').checked == true){
+    cards[idx] = "AMEX";
+    idx = idx + 1;
+  }
+  
+  if(document.getElementById('DS').checked == true){
+    cards[idx] = "DISCOVER";
+    idx = idx + 1;
+  }
 
   var supportedInstruments = [
       {
