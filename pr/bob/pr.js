@@ -20,14 +20,40 @@ function saveUserInputsToStorage(){
     var merchantName = document.getElementById('merchantName').value;
     localStorage.setItem("merchantName", merchantName);
     
-    //var allowedCardBrand = document.getElementById('allowedCardBrand').value;
-    //localStorage.setItem("allowedCardBrand", allowedCardBrand);
+    var viChecked = JSON.stringify(document.getElementById('VI').checked);
+    localStorage.setItem("viChecked", viChecked);
+    
+    var mcChecked = JSON.stringify(document.getElementById('MC').checked);
+    localStorage.setItem("mcChecked", mcChecked);
+    
+    var axChecked = JSON.stringify(document.getElementById('AX').checked);
+    localStorage.setItem("axChecked", axChecked);
+    
+    var dsChecked = JSON.stringify(document.getElementById('DS').checked);
+    localStorage.setItem("dsChecked", dsChecked);
     
     var isRecurring = JSON.stringify(document.getElementById('isRecurring').checked);
     localStorage.setItem("isRecurring", isRecurring);
     
     var billingAddressRequired = JSON.stringify(document.getElementById('billingAddressRequired').checked);
     localStorage.setItem("billingAddressRequired", billingAddressRequired);
+    
+    var currencyIndex = document.getElementById('CurrencyCode').selectedIndex;
+    localStorage.setItem("CurrencyCode", currencyIndex);
+    
+    
+    var requestShipping = JSON.stringify(document.getElementById('requestShipping').checked);
+    localStorage.setItem("requestShipping", requestShipping);
+    
+    var requestPayerEmail = JSON.stringify(document.getElementById('requestPayerEmail').checked);
+    localStorage.setItem("requestPayerEmail", requestPayerEmail);
+    
+    var requestPayerPhone = JSON.stringify(document.getElementById('requestPayerPhone').checked);
+    localStorage.setItem("requestPayerPhone", requestPayerPhone);
+    
+    var requestPayerName = JSON.stringify(document.getElementById('requestPayerName').checked);
+    localStorage.setItem("requestPayerName", requestPayerName);
+    
     
     ////////////////////////////////////////////////////////////////////////////////////////
     /*
@@ -72,9 +98,23 @@ function init(){
     document.getElementById('merchantName').value = localStorage.getItem("merchantName");
     //document.getElementById('allowedCardBrand').value = localStorage.getItem("allowedCardBrand");
     document.getElementById('paymentProtocol').value = localStorage.getItem("paymentProtocol");
+    
+    document.getElementById('VI').checked = (localStorage.getItem("viChecked")=='true')?true:false;
+    document.getElementById('MC').checked = (localStorage.getItem("mcChecked")=='true')?true:false;
+    document.getElementById('AX').checked = (localStorage.getItem("axChecked")=='true')?true:false;
+    document.getElementById('DS').checked = (localStorage.getItem("dsChecked")=='true')?true:false;
+    
     document.getElementById('isRecurring').checked = (localStorage.getItem("isRecurring")=='true')?true:false;
     document.getElementById('billingAddressRequired').checked = (localStorage.getItem("billingAddressRequired")=='true')?true:false;
     
+    
+    document.getElementById('CurrencyCode').selectedIndex = localStorage.getItem("CurrencyCode");
+    
+    
+    document.getElementById('requestShipping').checked = (localStorage.getItem("requestShipping")=='true')?true:false;
+    document.getElementById('requestPayerEmail').checked = (localStorage.getItem("requestPayerEmail")=='true')?true:false;
+    document.getElementById('requestPayerPhone').checked = (localStorage.getItem("requestPayerPhone")=='true')?true:false;
+    document.getElementById('requestPayerName').checked = (localStorage.getItem("requestPayerName")=='true')?true:false;
     //////////////////////////////////////////////////////////////////////////////////////
     
     //var supportedMethodsArray = localStorage.getItem("supportedMethods");
