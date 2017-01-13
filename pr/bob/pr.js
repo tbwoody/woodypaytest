@@ -247,6 +247,19 @@ function buildPaymentRequest() {
   if (!window.PaymentRequest) {
     return null;
   }
+  
+  var cards = [];
+  
+  var idx = 0;
+  if(document.getElementById('VI').checked == true){
+    cards[idx] = "VISA";
+    idx = idx + 1;
+  }
+  
+  if(document.getElementById('MC').checked == true){
+    cards[idx] = "MASTERCARD";
+    idx = idx + 1;
+  }
 
   var supportedInstruments = [
       {
@@ -256,10 +269,11 @@ function buildPaymentRequest() {
           merchantRefId: 'MerchantReferenceId',
           orderNumber: 'AMZ007MAR',
           paymentProtocol: 'PROTOCOL_3DS',
-          isRecurring: false,
+          isRecurring: document.getElementById('isRecurring').checked,
           merchantName: 'ABC Store',
-          billingAddressRequired: true,
-          allowedCardNetworks:['VISA','MASTERCARD']
+          billingAddressRequired: document.getElementById('billingAddressRequired').checked,
+          //allowedCardNetworks:['VISA','MASTERCARD']
+          allowedCardNetworks:cards
           //allowedCardNetworks:['VI','MC','AX','DS']
         }
     }
