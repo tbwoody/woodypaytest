@@ -459,6 +459,8 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
     return;
   }
   
+  saveUserInputsToStorage();
+  
   var request = buildPaymentRequest();
   
   if (!request) {
@@ -466,7 +468,6 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
     return;
   }
   
-  saveUserInputsToStorage();
 
   try {
     request.show()
