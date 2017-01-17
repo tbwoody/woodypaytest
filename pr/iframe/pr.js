@@ -20,11 +20,11 @@ function buildPaymentRequest() {
           merchantRefId: 'MerchantReferenceId',
           orderNumber: 'AMZ007MAR',
           paymentProtocol: 'PROTOCOL_3DS',
-          isRecurring: document.getElementById('isRecurring').checked,
-          merchantName: localStorage.getItem("merchantName"),
-          billingAddressRequired: document.getElementById('billingAddressRequired').checked,
-          //allowedCardNetworks:['VISA','MASTERCARD']
-          allowedCardNetworks:cards
+          isRecurring: false,
+          merchantName: 'Good Year',
+          billingAddressRequired: true,
+          allowedCardNetworks:['VISA','MASTERCARD']
+          //allowedCardNetworks:cards
           //allowedCardNetworks:['VI','MC','AX','DS']
         }
     }
