@@ -289,8 +289,10 @@ function buildPaymentRequest() {
           merchantName: localStorage.getItem("merchantName"),
           billingAddressRequired: document.getElementById('billingAddressRequired').checked,
           //allowedCardNetworks:['VISA','MASTERCARD']
-          allowedCardNetworks:cards
+          allowedCardNetworks:cards,
           //allowedCardNetworks:['VI','MC','AX','DS']
+          isDebugMode: false,
+		      APIKey: "12345"
         }
     }
   ];
