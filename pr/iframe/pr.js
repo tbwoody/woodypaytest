@@ -23,7 +23,9 @@ function buildPaymentRequest() {
           isRecurring: false,
           merchantName: 'Good Year',
           billingAddressRequired: true,
-          allowedCardNetworks:['VISA','MASTERCARD']
+          allowedCardNetworks:['VISA','MASTERCARD'],
+          isDebugMode: false,
+	        APIKey: "12345"
           //allowedCardNetworks:cards
           //allowedCardNetworks:['VI','MC','AX','DS']
         }
