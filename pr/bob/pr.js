@@ -292,7 +292,7 @@ function buildPaymentRequest() {
           allowedCardNetworks:cards,
           //allowedCardNetworks:['VI','MC','AX','DS']
           isDebugMode: false,
-		      APIKey: "12345"
+	  APIKey: "12345"
         }
     }
   ];
