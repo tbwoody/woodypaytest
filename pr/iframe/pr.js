@@ -25,7 +25,7 @@ function buildPaymentRequest() {
           billingAddressRequired: true,
           allowedCardNetworks:['VISA','MASTERCARD'],
           isDebugMode: false,
-	        APIKey: "12345"
+	  APIKey: "12345"
           //allowedCardNetworks:cards
           //allowedCardNetworks:['VI','MC','AX','DS']
         }
