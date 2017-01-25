@@ -281,8 +281,8 @@ function buildPaymentRequest() {
       {
         supportedMethods: supportedMethodsArray,
         data:{
-          productId: 'a6bea2455a6749c6945ee7',//'b30f1a1ea0b244458d5a5b',
-          merchantRefId: 'MerchantReferenceId',
+          productId: 'b30f1a1ea0b244458d5a5b',
+          //merchantRefId: 'MerchantReferenceId',
           orderNumber: 'AMZ007MAR',
           paymentProtocol: 'PROTOCOL_3DS',
           isRecurring: document.getElementById('isRecurring').checked,
