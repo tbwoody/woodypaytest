@@ -282,7 +282,7 @@ function buildPaymentRequest() {
         supportedMethods: supportedMethodsArray,
         data:{
           productId: 'b30f1a1ea0b244458d5a5b',
-          //merchantRefId: 'MerchantReferenceId',
+          merchantRefId: 'MerchantReferenceId',
 	  //merchantGatewayParameter: {userId: 'MerchantReferenceId'},	
           orderNumber: 'AMZ007MAR',
           paymentProtocol: 'PROTOCOL_3DS',
@@ -293,7 +293,8 @@ function buildPaymentRequest() {
           allowedCardNetworks:cards,
           //allowedCardNetworks:['VI','MC','AX','DS'],
           //debug:{APIKey: '12345'}
-	  
+	  isDebugMode: false,
+ 	  APIKey: '12345'
         }
     }
   ];
