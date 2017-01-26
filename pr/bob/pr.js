@@ -283,16 +283,17 @@ function buildPaymentRequest() {
         data:{
           productId: 'b30f1a1ea0b244458d5a5b',
           //merchantRefId: 'MerchantReferenceId',
+	  merchantGatewayParameter: {userId: 'MerchantReferenceId'},	
           orderNumber: 'AMZ007MAR',
           paymentProtocol: 'PROTOCOL_3DS',
           isRecurring: document.getElementById('isRecurring').checked,
           merchantName: localStorage.getItem("merchantName"),
           billingAddressRequired: document.getElementById('billingAddressRequired').checked,
-          //allowedCardNetworks:['VISA','MASTERCARD']
+          //allowedCardNetworks:['VISA','MASTERCARD'],
           allowedCardNetworks:cards,
-          //allowedCardNetworks:['VI','MC','AX','DS']
-          isDebugMode: false,
-	  APIKey: '12345'
+          //allowedCardNetworks:['VI','MC','AX','DS'],
+          debug:{APIKey: '12345'}
+	  
         }
     }
   ];
