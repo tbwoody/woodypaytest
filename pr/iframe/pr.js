@@ -17,16 +17,14 @@ function buildPaymentRequest() {
         supportedMethods: ['https://samsung.com/pay'],
         data:{
           productId: 'b30f1a1ea0b244458d5a5b',
-          merchantRefId: 'MerchantReferenceId',
+          merchantGatewayParameter: {userId: 'MerchantReferenceId'},
           orderNumber: 'AMZ007MAR',
           paymentProtocol: 'PROTOCOL_3DS',
           isRecurring: false,
           merchantName: 'Good Year',
           billingAddressRequired: true,
           allowedCardNetworks:['VISA','MASTERCARD'],
-          isDebugMode: false,
-	  APIKey: '12345'
-          //allowedCardNetworks:cards
+          debug:{APIKey: '12345'}
           //allowedCardNetworks:['VI','MC','AX','DS']
         }
     }
