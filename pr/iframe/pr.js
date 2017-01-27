@@ -16,7 +16,7 @@ function buildPaymentRequest() {
       {
         supportedMethods: ['https://samsung.com/pay'],
         data:{
-          //productId: 'a6bea2455a6749c6945ee7',
+          productId: 'a6bea2455a6749c6945ee7',
           //merchantGatewayParameter: {userId: 'MerchantReferenceId'},
           orderNumber: 'AMZ007MAR',
           paymentProtocol: 'PROTOCOL_3DS',
