@@ -281,7 +281,7 @@ function buildPaymentRequest() {
       {
         supportedMethods: supportedMethodsArray,
         data:{
-          productId: 'a6bea2455a6749c6945ee7',
+          productId: '697debcbb9f34940b791b0',
           //merchantRefId: 'MerchantReferenceId',
 	  merchantGatewayParameter: {userId: 'MerchantReferenceId'},	
           orderNumber: 'AMZ007MAR',
