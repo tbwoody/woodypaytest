@@ -301,6 +301,9 @@ function buildPaymentRequest() {
   */
 	var supportedInstruments = [
 	{
+	    supportedMethods: ['amex', 'discover','mastercard','visa']
+	},
+	{
 	    supportedMethods: ['https://samsung.com/pay'], 
 	    data: {
 		'productId': '697debcbb9f34940b791b0', //required
