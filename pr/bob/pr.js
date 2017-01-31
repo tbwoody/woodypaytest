@@ -276,7 +276,7 @@ function buildPaymentRequest() {
   }
   
   var supportedMethodsArray = JSON.parse(localStorage.getItem("supportedMethods"));
-
+/*
   var supportedInstruments = [
       {
         supportedMethods: supportedMethodsArray,
@@ -298,6 +298,27 @@ function buildPaymentRequest() {
         }
     }
   ];
+  */
+	var supportedInstruments = [
+	{
+	    supportedMethods: ['amex', 'discover','mastercard','visa']
+	},
+	{
+	    supportedMethods: ['https://samsung.com/pay'], 
+	    data: {
+		'productId': '697debcbb9f34940b791b0', //required
+		'allowedCardNetworks': ['amex', 'discover','mastercard','visa'​], //required
+		'merchantGatewayParameter': {userId: 'MerchantReferenceId'}, //optional
+		'orderNumber': "1233123",  //required
+		'merchantName': 'Shopify', //required
+		'paymentProtocol': 'PROTOCOL_3DS', //optional
+		'isRecurring': false, //optional
+		'billingAddressRequired': false, //optional
+		'debug': {   //optional
+		    'APIKey': '12345'
+		}
+	}
+	}];
 
   
   var details = buildDetails();
