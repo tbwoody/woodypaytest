@@ -54,33 +54,6 @@ function saveUserInputsToStorage(){
     var requestPayerName = JSON.stringify(document.getElementById('requestPayerName').checked);
     localStorage.setItem("requestPayerName", requestPayerName);
     
-    
-    ////////////////////////////////////////////////////////////////////////////////////////
-    /*
-    var supportedMethodsList = document.getElementById('supportedMethodsList').childNodes;
-    var supportedMethodsArray = [];
-    for( var i = 0; i < supportedMethodsList.length; ++i )
-    {
-        var method = supportedMethodsList[i];
-        supportedMethodsArray.push(method.innerText || method.textContent);
-    }
-    //localStorage.setItem("supportedMethods", JSON.stringify(list));
-    localStorage["supportedMethods"] = JSON.stringify(supportedMethodsArray);
-    */
-    
-    //////////////////////////////////////////////////////////////////////////////////////
-    /*
-    var orderItemsList = document.getElementById('orderItemsList').childNodes;
-    var orderItemsArray = [];
-    for( var j = 0; j < orderItemsList.length; ++j )
-    {
-        var item = orderItemsList[j];
-        orderItemsArray.push(item.innerText || item.textContent);
-    }
-    //localStorage.setItem("supportedMethods", JSON.stringify(list));
-    localStorage["orderItems"] = JSON.stringify(orderItemsArray);
-    */
-    
   } else {
       // Sorry! No Web Storage support..
   }
@@ -276,49 +249,27 @@ function buildPaymentRequest() {
   }
   
   var supportedMethodsArray = JSON.parse(localStorage.getItem("supportedMethods"));
-/*
-  var supportedInstruments = [
-      {
-        supportedMethods: supportedMethodsArray,
-        data:{
-          productId: 'a6bea2455a675743945ee7',
-          //merchantRefId: 'MerchantReferenceId',
-	  merchantGatewayParameter: {userId: 'MerchantReferenceId'},	
-          orderNumber: 'AMZ371MAR',
-          paymentProtocol: 'PROTOCOL_3DS',
-          isRecurring: document.getElementById('isRecurring').checked,
-          merchantName: localStorage.getItem("merchantName"),
-          billingAddressRequired: document.getElementById('billingAddressRequired').checked,
-          //allowedCardNetworks:['VISA','MASTERCARD'],
-          allowedCardNetworks:cards,
-          //allowedCardNetworks:['VI','MC','AX','DS'],
-          //debug:{APIKey: '12345'}
-	  //isDebugMode: false,
- 	  //APIKey: '12345'
-        }
-    }
-  ];
-  */
-	var supportedInstruments = [
-	{
-	    supportedMethods: ['amex', 'discover','mastercard','visa']
-	},
-	{
-	    supportedMethods: ['https://samsung.com/pay'], 
-	    data: {
-		'productId': localStorage.getItem("productId"), //required
-		'allowedCardNetworks': ['amex', 'discover','mastercard','visa'], //required
-		'merchantGatewayParameter': {'userId': 'MerchantReferenceId'}, //optional
-		'orderNumber': '1233123',  //required
-		'merchantName': 'Shopify', //required
-		'paymentProtocol': 'PROTOCOL_3DS', //optional
-		'isRecurring': false, //optional
-		'billingAddressRequired': false, //optional
-		'debug': {   //optional
-		    'APIKey': '12345'
-		}
+
+var supportedInstruments = [
+{
+    supportedMethods: ['amex', 'discover','mastercard','visa']
+},
+{
+    supportedMethods: ['https://samsung.com/pay'], 
+    data: {
+	'productId': localStorage.getItem("productId"), //required
+	'allowedCardNetworks': ['amex', 'discover','mastercard','visa'], //required
+	'merchantGatewayParameter': {'userId': 'MerchantReferenceId'}, //optional
+	'orderNumber': '1233123',  //required
+	'merchantName': 'Shopify', //required
+	'paymentProtocol': 'PROTOCOL_3DS', //optional
+	'isRecurring': false, //optional
+	'billingAddressRequired': false, //optional
+	'debug': {   //optional
+	    'APIKey': '12345'
 	}
-	}];
+}
+}];
 
   
   var details = buildDetails();
