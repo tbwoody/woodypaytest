@@ -284,7 +284,7 @@ function buildPaymentRequest() {
           productId: 'a6bea2455a675743945ee7',
           //merchantRefId: 'MerchantReferenceId',
 	  merchantGatewayParameter: {userId: 'MerchantReferenceId'},	
-          orderNumber: 'AMZ007MAR',
+          orderNumber: 'AMZ371MAR',
           paymentProtocol: 'PROTOCOL_3DS',
           isRecurring: document.getElementById('isRecurring').checked,
           merchantName: localStorage.getItem("merchantName"),
