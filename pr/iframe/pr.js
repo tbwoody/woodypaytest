@@ -142,43 +142,6 @@ function buildPaymentRequest() {
     })(details));
   });
 
-  /*
-    // Show UI then continue with user payment info
-  request.show().then(result => {
-    // POST the result to the server
-    return fetch('/pay', {
-      method: 'POST',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(result.toJSON())
-    }).then(res => {
-      // Only if successful
-      if (res.status === 200) {
-        return res.json();
-      } else {
-        throw 'Failure';
-      }
-    }).then(response => {
-      // You should have received a JSON object
-      if (response.success == true) {
-        return result.complete('success');
-      } else {
-        return result.complete('fail');
-      }
-    }).then(() => {
-      console.log('Thank you!',
-          result.shippingAddress.toJSON(),
-          result.methodName,
-          result.details.toJSON());
-    }).catch(() => {
-      return result.complete('fail');
-    });
-  }).catch(function(err) {
-    console.error('Uh oh, something bad happened: ' + err.message);
-  });
-*/
   return request;
 }
 
