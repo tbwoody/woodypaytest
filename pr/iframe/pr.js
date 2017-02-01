@@ -13,22 +13,27 @@ function buildPaymentRequest() {
   
 
   var supportedInstruments = [
-      {
-        supportedMethods: ['https://samsung.com/pay'],
-        data:{
-          productId: 'a6bea2455a6749c6945ee7',
-          //merchantGatewayParameter: {userId: 'MerchantReferenceId'},
-          orderNumber: 'AMZ007MAR',
-          paymentProtocol: 'PROTOCOL_3DS',
-          isRecurring: false,
-          merchantName: 'Good Year',
-          billingAddressRequired: true,
-          allowedCardNetworks:['VISA','MASTERCARD'],
-          //debug:{APIKey: '12345'}
-          //allowedCardNetworks:['VI','MC','AX','DS']
-        }
-    }
-  ];
+	{
+	    supportedMethods: ['amex', 'discover','mastercard','visa']
+	},
+	{
+	    supportedMethods: ['https://samsung.com/pay'], 
+	    data: {
+        //Required items must be provided
+        //Optional items can be absent.
+		  'productId': '697debcbb9f34940b791b0', //required, please provide your productId
+		  'allowedCardNetworks': ['amex', 'discover','mastercard','visa'], //required, please provide the cards you supported.
+		  'merchantGatewayParameter': {'userId': 'MerchantReferenceId'}, //optional
+		  'orderNumber': '1233123',  //required, please provide the order number
+		  'merchantName': 'Shopify', //required, please provide the name of your merchant
+		  'paymentProtocol': 'PROTOCOL_3DS', //optional
+		  'isRecurring': false, //optional
+		  'billingAddressRequired': false, //optional
+		  'debug': {   //optional
+		    'APIKey': '12345'
+		  }
+	}
+	}];
 
   
   var details = {
