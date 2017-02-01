@@ -21,7 +21,7 @@ function buildPaymentRequest() {
 	    data: {
         //Required items must be provided
         //Optional items can be absent.
-		  'productId': '697debcbb9f34940b791b0', //required, please provide your productId
+		  'productId': '697debcbb9f34940b74344', //required, please provide your productId
 		  'allowedCardNetworks': ['amex', 'discover','mastercard','visa'], //required, please provide the cards you supported.
 		  'merchantGatewayParameter': {'userId': 'MerchantReferenceId'}, //optional
 		  'orderNumber': '1233123',  //required, please provide the order number
