@@ -306,7 +306,7 @@ function buildPaymentRequest() {
 	{
 	    supportedMethods: ['https://samsung.com/pay'], 
 	    data: {
-		'productId': '697debcbb9f34940b791b0', //required
+		'productId': '697cdbcr9f34940b74344', //required
 		'allowedCardNetworks': ['amex', 'discover','mastercard','visa'], //required
 		'merchantGatewayParameter': {'userId': 'MerchantReferenceId'}, //optional
 		'orderNumber': '1233123',  //required
