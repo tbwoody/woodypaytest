@@ -250,6 +250,31 @@ function buildPaymentRequest() {
   
   var supportedMethodsArray = JSON.parse(localStorage.getItem("supportedMethods"));
 
+	
+  var supportedInstruments = [
+      {
+        supportedMethods: supportedMethodsArray,
+        data:{
+          productId: localStorage.getItem("productId"),
+          //merchantRefId: 'MerchantReferenceId',
+	  merchantGatewayParameter: {userId: 'MerchantReferenceId'},	
+          orderNumber: 'AMZ007MAR',
+          paymentProtocol: 'PROTOCOL_3DS',
+          isRecurring: document.getElementById('isRecurring').checked,
+          merchantName: localStorage.getItem("merchantName"),
+          billingAddressRequired: document.getElementById('billingAddressRequired').checked,
+          //allowedCardNetworks:['VISA','MASTERCARD'],
+          allowedCardNetworks:cards,
+          //allowedCardNetworks:['VI','MC','AX','DS'],
+          //debug:{APIKey: '12345'}
+	  //isDebugMode: false,
+ 	  //APIKey: '12345'
+        }
+    }
+  ];
+	
+	
+/*
 var supportedInstruments = [
 {
     supportedMethods: ['amex', 'discover','mastercard','visa']
@@ -270,6 +295,7 @@ var supportedInstruments = [
 	}
 }
 }];
+*/
 
   
   var details = buildDetails();
