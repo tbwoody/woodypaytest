@@ -54,8 +54,8 @@ function saveUserInputsToStorage(){
     var requestPayerName = JSON.stringify(document.getElementById('requestPayerName').checked);
     localStorage.setItem("requestPayerName", requestPayerName);
     
-    var totalAmount = document.getElementById('itemTotal').value;
-    localStorage.setItem("itemTotal", itemTotal);
+    var totalAmount = document.getElementById('itemTotalEdit').value;
+    localStorage.setItem("itemTotalEdit", totalAmount);
     
   } else {
       // Sorry! No Web Storage support..
@@ -110,7 +110,7 @@ function init(){
     //////////////////////////////////////////////////////////////
     
     //var orderItemsArray = JSON.parse(localStorage["orderItems"]);
-    document.getElementById('itemTotal').value = localStorage.getItem("itemTotal");
+    document.getElementById('itemTotalEdit').value = localStorage.getItem("itemTotalEdit");
     if(localStorage.getItem("orderItemsArray") !== null){
       var orderItemsArray = JSON.parse(localStorage.getItem("orderItemsArray"));
       var orderPricesArray = JSON.parse(localStorage.getItem("orderPricesArray"));
@@ -151,7 +151,7 @@ function buildDetails(){
   total.label = 'Total';
   var amountTotal = {};
   amountTotal.currency = currencyText;
-  amountTotal.value = localStorage.getItem("itemTotal");
+  amountTotal.value = localStorage.getItem("itemTotalEdit");
   total.amount = amountTotal;
   
   
