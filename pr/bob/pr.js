@@ -233,17 +233,17 @@ function buildPaymentRequest() {
   
   var idx = 0;
   if(document.getElementById('VI').checked == true){
-    cards[idx] = "VISA";
+    cards[idx] = "AVISA";
     idx = idx + 1;
   }
   
   if(document.getElementById('MC').checked == true){
-    cards[idx] = "MASTERCARD";
+    cards[idx] = "BMASTERCARD";
     idx = idx + 1;
   }
   
   if(document.getElementById('AX').checked == true){
-    cards[idx] = "AMEX";
+    cards[idx] = "CAMEX";
     idx = idx + 1;
   }
   
