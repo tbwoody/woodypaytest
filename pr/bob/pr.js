@@ -233,22 +233,22 @@ function buildPaymentRequest() {
   
   var idx = 0;
   if(document.getElementById('VI').checked == true){
-    cards[idx] = "VISA";
+    cards[idx] = "visa";
     idx = idx + 1;
   }
   
   if(document.getElementById('MC').checked == true){
-    cards[idx] = "MASTERCARD";
+    cards[idx] = "mastercard";
     idx = idx + 1;
   }
   
   if(document.getElementById('AX').checked == true){
-    cards[idx] = "AMEX";
+    cards[idx] = "amex";
     idx = idx + 1;
   }
   
   if(document.getElementById('DS').checked == true){
-    cards[idx] = "DISCOVER";
+    cards[idx] = "discover";
     idx = idx + 1;
   }
   
