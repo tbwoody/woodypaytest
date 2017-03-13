@@ -114,10 +114,6 @@ function init(){
     if(localStorage.getItem("orderItemsArray") !== null){
       var orderItemsArray = JSON.parse(localStorage.getItem("orderItemsArray"));
       var orderPricesArray = JSON.parse(localStorage.getItem("orderPricesArray"));
-
-      //error('Current orderItemsArray length = ' + orderItemsArray.length);
-      //error('Current orderPricesArray length = ' + orderPricesArray.length);
-
       var orderItemsList = document.getElementById("orderItemsList");
       var blank = '\xa0\xa0\xa0\xa0\xa0';
 
@@ -167,14 +163,7 @@ function buildDetails(){
       orderItemsArray = JSON.parse(localStorage.getItem("orderItemsArray"));
       orderPricesArray = JSON.parse(localStorage.getItem("orderPricesArray"));
       
-      //error('orderItemsArray length = ' + orderItemsArray.length);
-      //error('orderPricesArray length = ' + orderPricesArray.length);
-      //error('orderItemsList length = ' + orderItemsList.length);
-      
       for(var i = 0; i < orderItemsArray.length; ++i){
-        //error('item = ' + orderItemsArray[i]);
-        //error('price = ' + orderPricesArray[i]);
-        
         var item = {};
         item.label = orderItemsArray[i];
         var itemAmount = {};
@@ -252,7 +241,7 @@ function buildPaymentRequest() {
     idx = idx + 1;
   }
 	
-  error('allowed cards = ' + cards.length);
+  //error('allowed cards = ' + cards.length);
   
   var supportedMethodsArray = JSON.parse(localStorage.getItem("supportedMethods"));
 
@@ -263,18 +252,14 @@ function buildPaymentRequest() {
         data:{
           productId: localStorage.getItem("productId"),
           //merchantRefId: 'MerchantReferenceId',
-	  merchantGatewayParameter: {userId: 'MerchantReferenceId'},	
-          orderNumber: 'AMZ007MAR',
-          paymentProtocol: 'PROTOCOL_3DS',
+	  merchantGatewayParameter: {userId: localStorage.getItem("merchantRefId")},	
+          orderNumber: localStorage.getItem("orderNumber"),
+          paymentProtocol: localStorage.getItem("paymentProtocol"),
           isRecurring: document.getElementById('isRecurring').checked,
           merchantName: localStorage.getItem("merchantName"),
           billingAddressRequired: document.getElementById('billingAddressRequired').checked,
-          //allowedCardNetworks:['VISA','MASTERCARD'],
           allowedCardNetworks:cards,
-          //allowedCardNetworks:['VI','MC','AX','DS'],
           //debug:{APIKey: '12345'}
-	  //isDebugMode: false,
- 	  //APIKey: '12345'
         }
     }
   ];
