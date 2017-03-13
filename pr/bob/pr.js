@@ -19,6 +19,9 @@ function saveUserInputsToStorage(){
     
     var merchantName = document.getElementById('merchantName').value;
     localStorage.setItem("merchantName", merchantName);
+
+    var debugKey = document.getElementById('debugKey').value;
+    localStorage.setItem("debugKey", debugKey);
     
     var viChecked = JSON.stringify(document.getElementById('VI').checked);
     localStorage.setItem("viChecked", viChecked);
@@ -72,6 +75,7 @@ function init(){
     document.getElementById('merchantRefId').value = localStorage.getItem("merchantRefId");
     document.getElementById('orderNumber').value = localStorage.getItem("orderNumber");
     document.getElementById('merchantName').value = localStorage.getItem("merchantName");
+    document.getElementById('debugKey').value = localStorage.getItem("debugKey");
     //document.getElementById('allowedCardBrand').value = localStorage.getItem("allowedCardBrand");
     document.getElementById('paymentProtocol').value = localStorage.getItem("paymentProtocol");
     
@@ -293,6 +297,7 @@ function buildPaymentRequest() {
   
 
   // When user selects a shipping address
+	/*
   request.addEventListener('shippingaddresschange', e => {
     e.updateWith(((details, addr) => {
       var shippingOption = {
@@ -338,6 +343,7 @@ function buildPaymentRequest() {
       return Promise.resolve(details);
     })(details));
   });
+	*/
 
   return request;
 }
@@ -350,7 +356,7 @@ function buildPaymentRequest() {
  */
 function onBuyClicked() {  // eslint-disable-line no-unused-vars
   if (!window.PaymentRequest) {
-    error('PaymentRequest API is not supported.');
+    alert('PaymentRequest API is not supported.');
     return;
   }
   
@@ -359,7 +365,7 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
   var request = buildPaymentRequest();
   
   if (!request) {
-    error('Developer error: PaymentRequest is invalid.');
+    alert('Developer error: PaymentRequest is invalid.');
     return;
   }
   
@@ -373,18 +379,18 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
                   done('Thank you!', instrumentResponse);
                 })
                 .catch(function(err) {
-                  error('SBrowser: ' + err);
-                  request = buildPaymentRequest();
+                  alert('SBrowser: ' + err);
+                  //request = buildPaymentRequest();
                 });
           }, 500);
         })
         .catch(function(err) {
-          error('SBrowser: ' + err);
-          request = buildPaymentRequest();
+          alert('SBrowser: ' + err);
+          //request = buildPaymentRequest();
         });
   } catch (e) {
-    error('Developer mistake: \'' + e.message + '\'');
-    request = buildPaymentRequest();
+    alert('Developer mistake: \'' + e.message + '\'');
+    //request = buildPaymentRequest();
   }
 }
 
@@ -404,7 +410,7 @@ function onAddMethodClicked() {
   var methodName = document.getElementById('supportedMethods').value;
   
   if(methodName==null || methodName.trim()==""){
-    error('Pleae enter the payment method!');
+    alert('Pleae enter the payment method!');
     return;
   }
   
