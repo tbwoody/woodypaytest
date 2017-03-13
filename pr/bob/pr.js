@@ -251,6 +251,8 @@ function buildPaymentRequest() {
     cards[idx] = "discover";
     idx = idx + 1;
   }
+	
+  error('allowed cards = ' + cards.length);
   
   var supportedMethodsArray = JSON.parse(localStorage.getItem("supportedMethods"));
 
@@ -276,70 +278,9 @@ function buildPaymentRequest() {
         }
     }
   ];
-	
-	
-/*
-var supportedInstruments = [
-{
-    supportedMethods: ['amex', 'discover','mastercard','visa']
-},
-{
-    supportedMethods: ['https://samsung.com/pay'], 
-    data: {
-	'productId': localStorage.getItem("productId"), //required
-	'allowedCardNetworks': ['amex', 'discover','mastercard','visa'], //required
-	'merchantGatewayParameter': {'userId': 'MerchantReferenceId'}, //optional
-	'orderNumber': '1233123',  //required
-	'merchantName': 'Shopify', //required
-	'paymentProtocol': 'PROTOCOL_3DS', //optional
-	'isRecurring': false, //optional
-	'billingAddressRequired': false, //optional
-	'debug': {   //optional
-	    'APIKey': '12345'
-	}
-}
-}];
-*/
-
   
   var details = buildDetails();
-  /*
-  var details = {
-    total: {label: 'Donation', amount: {currency: 'USD', value: '95.00'}},
-    displayItems: [
-      {
-        label: 'Original donation amount',
-        amount: {currency: 'USD', value: '65.00'}
-      },
-      {
-        label: 'Note 7',
-        amount: {currency: 'USD', value: '10.00'}
-      },
-      {
-        label: 'Note 5',
-        amount: {currency: 'USD', value: '10.00'}
-      },
-      {
-        label: 'S7',
-        amount: {currency: 'USD', value: '10.00'}
-      },
-      {
-        label: 'S6',
-        amount: {currency: 'USD', value: '10.00'}
-      },
-      {
-        label: 'iphone 6s plus',
-        amount: {currency: 'USD', value: '0.00'}
-      },
-      {
-        label: 'Friends and family discount',
-        amount: {currency: 'USD', value: '-10.00'}
-      }
-    ]
-  };
-  */
 
-  
   var options = {
     requestShipping: document.getElementById('requestShipping').checked,
     requestPayerEmail: document.getElementById('requestPayerEmail').checked,
@@ -413,43 +354,6 @@ var supportedInstruments = [
     })(details));
   });
 
-  /*
-    // Show UI then continue with user payment info
-  request.show().then(result => {
-    // POST the result to the server
-    return fetch('/pay', {
-      method: 'POST',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(result.toJSON())
-    }).then(res => {
-      // Only if successful
-      if (res.status === 200) {
-        return res.json();
-      } else {
-        throw 'Failure';
-      }
-    }).then(response => {
-      // You should have received a JSON object
-      if (response.success == true) {
-        return result.complete('success');
-      } else {
-        return result.complete('fail');
-      }
-    }).then(() => {
-      console.log('Thank you!',
-          result.shippingAddress.toJSON(),
-          result.methodName,
-          result.details.toJSON());
-    }).catch(() => {
-      return result.complete('fail');
-    });
-  }).catch(function(err) {
-    console.error('Uh oh, something bad happened: ' + err.message);
-  });
-*/
   return request;
 }
 
