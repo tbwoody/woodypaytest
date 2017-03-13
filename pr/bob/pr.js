@@ -285,6 +285,12 @@ function buildPaymentRequest() {
         }
     }
   ];
+
+  if (localStorage.getItem("debugKey")) {
+    var debug = {};
+    debug.APIKey = localStorage.getItem("debugKey");
+    supportedInstruments[0].debug = debug;
+  }
   
   var details = buildDetails();
    if(!details){
@@ -386,7 +392,7 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
   var request = buildPaymentRequest();
   
   if (!request) {
-    alert('Developer error: PaymentRequest is invalid.');
+    //alert('Developer error: PaymentRequest is invalid.');
     return;
   }
   
@@ -514,12 +520,12 @@ function onAddItemClicked() {
   var itemPrice = document.getElementById('itemPrice').value;
   
   if(itemName==null || itemName.trim()==""){
-    error('Pleae enter the item name!');
+    alert('Pleae enter the item name!');
     return;
   }
   
   if(itemPrice==null || itemPrice.trim()==""){
-    error('Pleae enter the item price!');
+    alert('Pleae enter the item price!');
     return;
   }
   
