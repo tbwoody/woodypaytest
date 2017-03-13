@@ -142,8 +142,11 @@ function buildSupportedInstruments(){
 
 
 function buildDetails(){
-  //error('building the details for payment request.');
-  
+  if(!localStorage.getItem("itemTotalEdit")){
+      alert('Please provide total amount value.');
+      return null;
+  }
+	
   var currencyOptionBox = document.getElementById('CurrencyCode');
   var currencyText= currencyOptionBox.options[currencyOptionBox.selectedIndex].text;
   
@@ -166,6 +169,11 @@ function buildDetails(){
       
       orderItemsArray = JSON.parse(localStorage.getItem("orderItemsArray"));
       orderPricesArray = JSON.parse(localStorage.getItem("orderPricesArray"));
+
+      if(orderItemsArray.length == 0){
+	 alert('Please provide order detailed items.');
+         return null;
+      }
       
       for(var i = 0; i < orderItemsArray.length; ++i){
         var item = {};
@@ -178,9 +186,11 @@ function buildDetails(){
       }
     } else {
       alert('No internal storage is supported.');
+      return null;
     }
   } else {
     alert('No items were found from your order');
+    return null;
   }
   
   
@@ -219,6 +229,7 @@ function buildPaymentRequest() {
   }
   
   if (localStorage.getItem("supportedMethods") == null) {
+    alert('Please provide supported methods.');
     return null;
   }
   
@@ -276,6 +287,9 @@ function buildPaymentRequest() {
   ];
   
   var details = buildDetails();
+   if(!details){
+        return null;
+   }
 
   var options = {
     requestShipping: document.getElementById('requestShipping').checked,
