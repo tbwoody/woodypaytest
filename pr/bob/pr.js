@@ -177,10 +177,10 @@ function buildDetails(){
         displayItems.push(item);
       }
     } else {
-      error('No internal storage is supported.');
+      alert('No internal storage is supported.');
     }
   } else {
-    error('No items were found from your order');
+    alert('No items were found from your order');
   }
   
   
@@ -246,9 +246,16 @@ function buildPaymentRequest() {
   }
 	
   //error('allowed cards = ' + cards.length);
+   if(cards.length == 0){
+      alert('Please provide merchant allowed cards.');
+      return null;
+   }
   
   var supportedMethodsArray = JSON.parse(localStorage.getItem("supportedMethods"));
-
+  if(supportedMethodsArray.length == 0){
+      alert('Please provide supported methods.');
+      return null;
+   }
 	
   var supportedInstruments = [
       {
