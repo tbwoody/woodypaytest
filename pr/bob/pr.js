@@ -289,7 +289,7 @@ function buildPaymentRequest() {
   if (localStorage.getItem("debugKey")) {
     var debug = {};
     debug.APIKey = localStorage.getItem("debugKey");
-    supportedInstruments[0].debug = debug;
+    supportedInstruments[0].data.debug = debug;
   }
   
   var details = buildDetails();
