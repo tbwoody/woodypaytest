@@ -478,6 +478,7 @@ function onClearMethodClicked() {
 }
 
 function onAddMerchantDataClicked() {
+/*
   var productId = document.getElementById('productId').value;
   var merchantRefId = document.getElementById('merchantRefId').value;
   var orderNumber = document.getElementById('orderNumber').value;
@@ -488,6 +489,7 @@ function onAddMerchantDataClicked() {
   
   var isRecurring = document.getElementById('isRecurring').checked;
   var billingAddressRequired = document.getElementById('billingAddressRequired').checked;
+ */
   
 }
 
@@ -495,6 +497,7 @@ function onClearDataClicked() {
   //var ulElem = document.getElementById('orderItemsList');
   //ulElem.innerHTML = '';
   //ulElem.removeChild(ulElem.childNodes[i])
+/*
   document.getElementById('productId').value='';
   document.getElementById('merchantRefId').value='';
   document.getElementById('orderNumber').value='';
@@ -513,6 +516,7 @@ function onClearDataClicked() {
   localStorage.removeItem("allowedCardBrand");
   localStorage.removeItem("isRecurring");
   localStorage.removeItem("billingAddressRequired");
+*/
 }
 
 
