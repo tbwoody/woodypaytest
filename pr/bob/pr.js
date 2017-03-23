@@ -40,6 +40,9 @@ function saveUserInputsToStorage(){
     
     var billingAddressRequired = JSON.stringify(document.getElementById('billingAddressRequired').checked);
     localStorage.setItem("billingAddressRequired", billingAddressRequired);
+	  
+    var cardHolderNameRequired = JSON.stringify(document.getElementById('cardHolderNameRequired').checked);
+    localStorage.setItem("cardHolderNameRequired", cardHolderNameRequired);
     
     var currencyIndex = document.getElementById('CurrencyCode').selectedIndex;
     localStorage.setItem("CurrencyCode", currencyIndex);
@@ -86,7 +89,7 @@ function init(){
     
     document.getElementById('isRecurring').checked = (localStorage.getItem("isRecurring")=='true')?true:false;
     document.getElementById('billingAddressRequired').checked = (localStorage.getItem("billingAddressRequired")=='true')?true:false;
-    
+    document.getElementById('cardHolderNameRequired').checked = (localStorage.getItem("cardHolderNameRequired")=='true')?true:false;
     
     document.getElementById('CurrencyCode').selectedIndex = localStorage.getItem("CurrencyCode");
     
@@ -280,6 +283,7 @@ function buildPaymentRequest() {
           isRecurring: document.getElementById('isRecurring').checked,
           merchantName: localStorage.getItem("merchantName"),
           billingAddressRequired: document.getElementById('billingAddressRequired').checked,
+	  cardHolderNameRequired: document.getElementById('cardHolderNameRequired').checked,	
           allowedCardNetworks:cards,
           //debug:{APIKey: '12345'}
         }
