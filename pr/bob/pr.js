@@ -201,6 +201,7 @@ function buildDetails(){
   var details = {};
   details.total = total;
   details.displayItems = displayItems;
+  details.id = "1234567890";
   
   return details;
 }
