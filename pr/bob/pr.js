@@ -5,7 +5,7 @@ function saveUserInputsToStorage(){
   
   if (typeof(Storage) !== "undefined") {
     // Code for localStorage/sessionStorage.
-    var productId = document.getElementById('version').value;
+    var version = document.getElementById('version').value;
     localStorage.setItem("version", version);
 	  
     var productId = document.getElementById('productId').value;
