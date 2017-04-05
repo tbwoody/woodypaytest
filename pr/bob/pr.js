@@ -5,6 +5,9 @@ function saveUserInputsToStorage(){
   
   if (typeof(Storage) !== "undefined") {
     // Code for localStorage/sessionStorage.
+    var productId = document.getElementById('version').value;
+    localStorage.setItem("version", version);
+	  
     var productId = document.getElementById('productId').value;
     localStorage.setItem("productId", productId);
     
@@ -74,6 +77,7 @@ function init(){
   
   if (typeof(Storage) !== "undefined") {
     // Code for localStorage/sessionStorage.
+    document.getElementById('version').value = localStorage.getItem("version");
     document.getElementById('productId').value = localStorage.getItem("productId");
     document.getElementById('merchantRefId').value = localStorage.getItem("merchantRefId");
     document.getElementById('orderNumber').value = localStorage.getItem("orderNumber");
@@ -276,6 +280,7 @@ function buildPaymentRequest() {
       {
         supportedMethods: supportedMethodsArray,
         data:{
+	  version:localStorage.getItem("version"),
           productId: localStorage.getItem("productId"),
           //merchantRefId: 'MerchantReferenceId',
 	  merchantGatewayParameter: {userId: localStorage.getItem("merchantRefId")},	
