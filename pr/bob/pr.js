@@ -291,7 +291,7 @@ function buildPaymentRequest() {
           billingAddressRequired: document.getElementById('billingAddressRequired').checked,
 	  cardHolderNameRequired: document.getElementById('cardHolderNameRequired').checked,	
           allowedCardNetworks:cards,
-          //debug:{APIKey: '12345'}
+          debug:{APIKey: '6874ad7c7c10403396811780aef9ecf3'}
         }
     }
   ];
