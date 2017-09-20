@@ -1,4 +1,4 @@
 {
-  "default_applications": ["https://tbwoody.github.io/woodypaytest/spay-app.json"]
+  "default_applications": ["https://tbwoody.github.io/woodypaytest/spay-app.json"],
   "supported_origins": ["https://bobpay.xyz"]
 }
