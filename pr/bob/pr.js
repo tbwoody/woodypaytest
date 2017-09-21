@@ -320,7 +320,7 @@ function buildPaymentRequest() {
   var request = null;
 
   try {
-    request = new PaymentRequest(supportedInstruments, details);
+    request = new PaymentRequest(supportedInstruments, details, options);
     if (request.canMakeActivePayment) {
       request.canMakeActivePayment().then(function(result) {
         info(result ? "Can make active payment" : "Cannot make active payment");
