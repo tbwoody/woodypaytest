@@ -408,7 +408,7 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
     return;
   }
   
-
+/*
   try {
     request.show()
         .then(function(instrumentResponse) {
@@ -432,6 +432,29 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
     //request = buildPaymentRequest();
   }
 }
+*/
+	
+
+request.show()
+.then(function(success){
+console.log("Chrome happy flow is done!");
+console.log(success);
+//checkoutInfoResp = document.createTextNode(success);
+//makePaymentArea.appendChild(checkoutInfoResp);
+request.complete('success')
+.then(function() {
+    done("thank you", success);
+})
+.catch(function(err) {
+    alert('error in makpayment ' + err);
+});
+})
+.catch(function(error) {
+//checkoutInfoResp = document.createTextNode(error);
+//makePaymentArea.appendChild(checkoutInfoResp);
+});
+}	
+	
 
 function ValidURL(str) {
   var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
