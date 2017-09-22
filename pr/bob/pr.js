@@ -443,7 +443,7 @@ console.log(success);
 //makePaymentArea.appendChild(checkoutInfoResp);
 request.complete('success')
 .then(function() {
-    done("thank you", success);
+    done("thank you bob", success);
 })
 .catch(function(err) {
     alert('error in makpayment ' + err);
