@@ -1,3 +1,4 @@
+
 /* global done:false */
 /* global error:false */
 /* global PaymentRequest:false */
@@ -318,11 +319,9 @@ function buildPaymentRequest() {
 
   
   var request = null;
-  var opt = {
-  };
 
   try {
-    request = new PaymentRequest(supportedInstruments, details, opt);
+    request = new PaymentRequest(supportedInstruments, details, options);
     if (request.canMakeActivePayment) {
       request.canMakeActivePayment().then(function(result) {
         info(result ? "Can make active payment" : "Cannot make active payment");
