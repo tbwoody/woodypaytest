@@ -333,9 +333,7 @@ function buildPaymentRequest() {
     error('Developer mistake: \'' + e.message + '\'');
   }
   
-
   // When user selects a shipping address
-	/*
   request.addEventListener('shippingaddresschange', e => {
     e.updateWith(((details, addr) => {
       var shippingOption = {
@@ -379,7 +377,6 @@ function buildPaymentRequest() {
       return Promise.resolve(details);
     })(details));
   });
-	*/
 
   return request;
 }
