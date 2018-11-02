@@ -409,11 +409,19 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
           window.setTimeout(function() {
             instrumentResponse.complete('success')
                 .then(function() {
-                  console.log('Thank you!', instrumentResponse);
+                  //done('Thank you!', instrumentResponse);
 		    
-		  //console.log(JSON.stringify(instrumentResponse));
-		  //var jsonObj = JSON.parse(instrumentResponse);
-		  //console.log(jsonObj);
+		  var paymentData = {
+		  	// payment method string
+		  	"method": paymentResponse.methodName,
+		  	// payment details as you requested
+		  	"details": JSON.stringify(paymentResponse.details),
+		  	// shipping address information
+		  	"address": JSON.stringify(paymentResponse.shippingAddress)
+	  	  };
+		    
+		  console.log(paymentData);
+	          console.log(JSON.stringify(paymentData));
 		    
 		  if (instrumentResponse.hasOwnProperty('details')) {
 		      error('Parsing Details data...'); 
