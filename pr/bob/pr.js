@@ -424,9 +424,10 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
 	          console.log(JSON.stringify(paymentData));
 		    
 		  if (paymentData.hasOwnProperty("details")) {
-		      error('Parsing Details data...'); 
+		      error('Parsing Details data...' + paymentData.details);
+			  
                       //$('#nonce').val(instrumentResponse.details.paymentCredential.reference);
-		      done('Thank you!', instrumentResponse.details.paymentCredential.reference);
+		      //done('Thank you!', instrumentResponse.details.paymentCredential.reference);
                   } else {
 		       alert('Details is missing from payload.');
 		  }
