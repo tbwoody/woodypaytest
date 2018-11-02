@@ -410,9 +410,12 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
             instrumentResponse.complete('success')
                 .then(function() {
                   //done('Thank you!', instrumentResponse);
+		  console.log(JSON.stringify(instrumentResponse));
+		  var jsonObj = JSON.parse(instrumentResponse);
+		  console.log(jsonObj);
 		    
 		  if (instrumentResponse.hasOwnProperty('details')) {
-		      alert('Parsing Details data...'); 
+		      error('Parsing Details data...'); 
                       $('#nonce').val(instrumentResponse.details.paymentCredential.reference);
 		      done('Thank you!', $('#nonce').val());
                   } else {
