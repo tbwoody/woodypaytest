@@ -421,12 +421,12 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
 	  	  };
 		    
 		  //console.log(paymentData);
-	          console.log('method = ' + paymentData.method);
-		  console.log('details = ' + paymentData.details);
-		  console.log('address = ' + paymentData.address);
+	          //console.log('method = ' + paymentData.method);
+		  //console.log('details = ' + paymentData.details);
+		  //console.log('address = ' + paymentData.address);
 		    
-		  if (paymentData.details !='')) {
-		      error('Parsing Details data...'); 
+		  if (instrumentResponse.details !='')) {
+		      //error('Parsing Details data...'); 
                       $('#nonce').val(instrumentResponse.details.paymentCredential.reference);
 		      done('Thank you!', $('#nonce').val());
                   } else {
