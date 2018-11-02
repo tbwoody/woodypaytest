@@ -425,6 +425,13 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
 		    
 		  if (paymentData.hasOwnProperty("details")) {
 		      error('Parsing Details data...' + paymentData.details);
+		      var details = paymentData.details;
+		      if (details.hasOwnProperty("paymentCredential") || details.hasOwnProperty('paymentCredential')) {
+		      	  var paymentCredentialInfo = details.paymentCredential;
+			  if (paymentCredentialInfo.hasOwnProperty("reference") || paymentCredentialInfo.hasOwnProperty('reference')) {
+			  	done('Thank you!', paymentCredentialInfo.reference);
+			  }
+		      }
 			  
                       //$('#nonce').val(instrumentResponse.details.paymentCredential.reference);
 		      //done('Thank you!', instrumentResponse.details.paymentCredential.reference);
