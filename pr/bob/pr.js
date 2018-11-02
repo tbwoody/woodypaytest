@@ -409,7 +409,7 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
           window.setTimeout(function() {
             instrumentResponse.complete('success')
                 .then(function() {
-                  //done('Thank you!', instrumentResponse);
+                  console.log('Thank you!', JSON.stringify(instrumentResponse));
 		    
 		  var paymentData = {
 		  	// payment method string
