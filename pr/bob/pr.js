@@ -428,6 +428,8 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
 		      var details = paymentData.details;
 		      if (details.hasOwnProperty("paymentCredential") || details.hasOwnProperty('paymentCredential')) {
 		      	  var paymentCredentialInfo = details.paymentCredential;
+			  error('Parsing Details data...' + paymentCredentialInfo);
+			      
 			  if (paymentCredentialInfo.hasOwnProperty("reference") || paymentCredentialInfo.hasOwnProperty('reference')) {
 			  	done('Thank you!', paymentCredentialInfo.reference);
 			  }
