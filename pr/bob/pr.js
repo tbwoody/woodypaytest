@@ -415,7 +415,6 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
 			&& typeof instrumentResponse.details.paymentCredential['reference'] !== "undefined"){
 			// code
 			var details = instrumentResponse.details.paymentCredential.reference;
-			$("#nonce").val(details);
 			    
 			done('Thank you!', details);
 		   }
