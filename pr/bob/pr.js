@@ -409,8 +409,8 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
           window.setTimeout(function() {
             instrumentResponse.complete('success')
                 .then(function() {
-                  console.log('Thank you!', JSON.stringify(instrumentResponse));
-		    
+                  done('Thank you!', instrumentResponse);
+		    /*
 		  var paymentData = {
 		  	// payment method string
 		  	"method": instrumentResponse.methodName,
@@ -440,6 +440,7 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
                   } else {
 		       alert('Details is missing from payload.');
 		  }
+		    */
 		    
                 })
                 .catch(function(err) {
