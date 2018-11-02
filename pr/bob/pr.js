@@ -412,9 +412,12 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
                   //done('Thank you!', instrumentResponse);
 		    
 		  if (instrumentResponse.hasOwnProperty('details')) {
+		      alert('Parsing Details data...'); 
                       $('#nonce').val(instrumentResponse.details.paymentCredential.reference);
 		      done('Thank you!', $('#nonce').val());
-                  }
+                  } else {
+		       alert('Details is missing from payload.');
+		  }
 		    
                 })
                 .catch(function(err) {
