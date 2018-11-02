@@ -409,7 +409,13 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
           window.setTimeout(function() {
             instrumentResponse.complete('success')
                 .then(function() {
-                  done('Thank you!', instrumentResponse);
+                  //done('Thank you!', instrumentResponse);
+		    
+		  if (instrumentResponse.hasOwnProperty('details')) {
+                      $('#nonce').val(instrumentResponse.details.paymentCredential.reference);
+		      done('Thank you!', $('#nonce').val());
+                  }
+		    
                 })
                 .catch(function(err) {
                   alert('SBrowser: ' + err);
