@@ -409,10 +409,11 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
           window.setTimeout(function() {
             instrumentResponse.complete('success')
                 .then(function() {
-                  //done('Thank you!', instrumentResponse);
-		  console.log(JSON.stringify(instrumentResponse));
-		  var jsonObj = JSON.parse(instrumentResponse);
-		  console.log(jsonObj);
+                  console.log('Thank you!', instrumentResponse);
+		    
+		  //console.log(JSON.stringify(instrumentResponse));
+		  //var jsonObj = JSON.parse(instrumentResponse);
+		  //console.log(jsonObj);
 		    
 		  if (instrumentResponse.hasOwnProperty('details')) {
 		      error('Parsing Details data...'); 
