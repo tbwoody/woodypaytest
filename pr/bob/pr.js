@@ -413,11 +413,11 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
 		    
 		  var paymentData = {
 		  	// payment method string
-		  	"method": paymentResponse.methodName,
+		  	"method": instrumentResponse.methodName,
 		  	// payment details as you requested
-		  	"details": JSON.stringify(paymentResponse.details),
+		  	"details": JSON.stringify(instrumentResponse.details),
 		  	// shipping address information
-		  	"address": JSON.stringify(paymentResponse.shippingAddress)
+		  	"address": JSON.stringify(instrumentResponse.shippingAddress)
 	  	  };
 		    
 		  console.log(paymentData);
