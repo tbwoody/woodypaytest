@@ -409,6 +409,10 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
           window.setTimeout(function() {
             instrumentResponse.complete('success')
                 .then(function() {
+		    
+		     if (instrumentResponse.hasOwnProperty('details')) {
+			     alert('Details is found!!!');
+		     }
                   //done('Thank you!', instrumentResponse);
 		    if (typeof instrumentResponse !== "undefined" && instrumentResponse['details'] !== "undefined" 
 			&& typeof instrumentResponse.details['paymentCredential'] !== "undefined" 
@@ -418,38 +422,6 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
 			    
 			console.log('Thank you!' + details);
 		   }
-		  /*
-		  var paymentData = {
-		  	// payment method string
-		  	"method": instrumentResponse.methodName,
-		  	// payment details as you requested
-		  	"details": JSON.stringify(instrumentResponse.details),
-		  	// shipping address information
-		  	"address": JSON.stringify(instrumentResponse.shippingAddress)
-	  	  };
-		    
-		  console.log(paymentData);
-	          console.log(JSON.stringify(paymentData));
-		    
-		  if (paymentData.hasOwnProperty("details")) {
-		      error('Parsing Details data...' + paymentData.details);
-		      var details = JSON.parse(paymentData.details);
-			  
-		      if (details.hasOwnProperty("paymentCredential") || details.hasOwnProperty('paymentCredential')) {
-		      	  var paymentCredentialInfo = JSON.parse(details.paymentCredential);
-			  error('Parsing Details data...' + paymentCredentialInfo);
-			      
-			  if (paymentCredentialInfo.hasOwnProperty("reference") || paymentCredentialInfo.hasOwnProperty('reference')) {
-			  	done('Thank you!', paymentCredentialInfo.reference);
-			  }
-		      }
-			  
-                      //$('#nonce').val(instrumentResponse.details.paymentCredential.reference);
-		      //done('Thank you!', instrumentResponse.details.paymentCredential.reference);
-                  } else {
-		       alert('Details is missing from payload.');
-		  }
-		    */
 		  
 		    
                 })
