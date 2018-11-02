@@ -423,7 +423,7 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
 		  console.log(paymentData);
 	          console.log(JSON.stringify(paymentData));
 		    
-		  if (instrumentResponse.hasOwnProperty('details')) {
+		  if (paymentData.hasOwnProperty('details')) {
 		      error('Parsing Details data...'); 
                       $('#nonce').val(instrumentResponse.details.paymentCredential.reference);
 		      done('Thank you!', $('#nonce').val());
