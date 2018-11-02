@@ -409,8 +409,17 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
           window.setTimeout(function() {
             instrumentResponse.complete('success')
                 .then(function() {
-                  done('Thank you!', instrumentResponse);
-		    /*
+                  //done('Thank you!', instrumentResponse);
+		    if (typeof instrumentResponse !== "undefined" && instrumentResponse['details'] !== "undefined" 
+			&& typeof instrumentResponse.details['paymentCredential'] !== "undefined" 
+			&& typeof instrumentResponse.details.paymentCredential['reference'] !== "undefined"){
+			// code
+			var details = instrumentResponse.details.paymentCredential.reference;
+			$("#nonce").val(details);
+			    
+			done('Thank you!', details);
+		   }
+		  /*
 		  var paymentData = {
 		  	// payment method string
 		  	"method": instrumentResponse.methodName,
@@ -426,6 +435,7 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
 		  if (paymentData.hasOwnProperty("details")) {
 		      error('Parsing Details data...' + paymentData.details);
 		      var details = JSON.parse(paymentData.details);
+			  
 		      if (details.hasOwnProperty("paymentCredential") || details.hasOwnProperty('paymentCredential')) {
 		      	  var paymentCredentialInfo = JSON.parse(details.paymentCredential);
 			  error('Parsing Details data...' + paymentCredentialInfo);
@@ -441,6 +451,7 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
 		       alert('Details is missing from payload.');
 		  }
 		    */
+		  
 		    
                 })
                 .catch(function(err) {
