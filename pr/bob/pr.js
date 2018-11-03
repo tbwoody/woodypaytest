@@ -410,11 +410,11 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
             instrumentResponse.complete('success')
                 .then(function() {
 		    
-		     if (instrumentResponse.hasOwnProperty('details')) {
+		     if (instrumentResponse.hasOwnProperty("'details'")) {
 			     alert('Details is found!!!');
 		     }
 		     if (instrumentResponse.details.paymentCredential.reference) {
-			     alert('Reference found');
+			    // alert('Reference found');
 		     }
                     // done('Thank you!', instrumentResponse);
 		    /*
