@@ -414,10 +414,10 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
 			     alert('Details is found!!!');
 		     }
 		     if (instrumentResponse.details.paymentCredential.reference) {
-			    // alert('Reference found');
+			     alert('Reference found');
 		     }
                     // done('Thank you!', instrumentResponse);
-		    /*
+		    
 		    if (typeof instrumentResponse !== "undefined" && instrumentResponse['details'] !== "undefined" 
 			&& typeof instrumentResponse.details['paymentCredential'] !== "undefined" 
 			&& typeof instrumentResponse.details.paymentCredential['reference'] !== "undefined"){
@@ -426,7 +426,7 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
 			    
 			console.log('Thank you!' + details);
 		   }
-		   */
+		   
 		  
 		    
                 })
