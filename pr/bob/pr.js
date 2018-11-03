@@ -413,7 +413,7 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
 		     if (instrumentResponse.hasOwnProperty('details')) {
 			     alert('Details is found!!!');
 		     }
-		     if (instrumentResponse.details.paymentCredential.reference)) {
+		     if (instrumentResponse.details.paymentCredential.reference) {
 			     alert('Reference found');
 		     }
                     // done('Thank you!', instrumentResponse);
