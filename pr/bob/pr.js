@@ -413,7 +413,10 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
 		     if (instrumentResponse.hasOwnProperty('details')) {
 			     alert('Details is found!!!');
 		     }
-                  done('Thank you!', instrumentResponse);
+		     if (instrumentResponse.details.paymentCredential.reference)) {
+			     alert('Reference found');
+		     }
+                    // done('Thank you!', instrumentResponse);
 		    /*
 		    if (typeof instrumentResponse !== "undefined" && instrumentResponse['details'] !== "undefined" 
 			&& typeof instrumentResponse.details['paymentCredential'] !== "undefined" 
