@@ -424,7 +424,7 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
 			// code
 			var details = instrumentResponse.details.paymentCredential.reference;
 			    
-			console.log('Thank you!' + details);
+			console.log('Thank you! Here is the reference: ' + details);
 		   }
 		   
 		  
