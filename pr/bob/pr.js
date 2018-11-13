@@ -409,15 +409,7 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
           window.setTimeout(function() {
             instrumentResponse.complete('success')
                 .then(function() {
-		    
-		     if (instrumentResponse.hasOwnProperty("'details'")) {
-			     //alert('Details is found!!!');
-		     }
-		     if (instrumentResponse.details.paymentCredential.reference) {
-			     //alert('Reference found');
-		     }
-                    // done('Thank you!', instrumentResponse);
-		    
+		   
 		    if (typeof instrumentResponse !== "undefined" && instrumentResponse['details'] !== "undefined" 
 			&& typeof instrumentResponse.details['paymentCredential'] !== "undefined" 
 			&& typeof instrumentResponse.details.paymentCredential['reference'] !== "undefined"){
@@ -427,7 +419,7 @@ function onBuyClicked() {  // eslint-disable-line no-unused-vars
 			console.log('Thank you! Here is the reference: ' + details);
 		   }
 		   
-		  
+		  done('Thank you!', instrumentResponse);
 		    
                 })
                 .catch(function(err) {
