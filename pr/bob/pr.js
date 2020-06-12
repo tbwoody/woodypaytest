@@ -322,8 +322,8 @@ function buildPaymentRequest() {
 
   try {
     request = new PaymentRequest(supportedInstruments, details, options);
-    if (request.canMakeActivePayment) {
-      request.canMakeActivePayment().then(function(result) {
+    if (request.hasEnrolledInstrument) {
+      request.hasEnrolledInstrument().then(function(result) {
         info(result ? "Can make active payment" : "Cannot make active payment");
       }).catch(function(err) {
         error(err);
